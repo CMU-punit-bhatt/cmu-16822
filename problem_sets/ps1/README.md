@@ -7,3 +7,8 @@
 
 # How to submit problem sets (PS)?
 We will release LaTex files for each PS. Please submit a single pdf to gradescope (Entry Code: “BBKN5P”). We accept either LaTex pdfs or scanned documents as long as the location of each question is annotated properly.
+
+# Helpful Links
+- LA notes - https://www.math.utah.edu/~zwick/Classes/Fall2012_2270/
+- SVD core - https://medium.com/towards-data-science/svd-8c2f72e264f
+-
