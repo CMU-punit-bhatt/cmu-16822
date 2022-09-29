@@ -1,0 +1,9 @@
+# Perspective Image followed by n normal images.
+SRC:
+- ['data/custom/q5/tt4.jpg', 'data/custom/q5/pic2.jpg', 'data/custom/q5/pic3.jpeg', 'data/custom/q5/pic4.jpg']
+
+COLORS:
+- [219, 62, 177]
+- [68, 214, 44]
+- [210, 39, 48]
+- [255, 173, 0]

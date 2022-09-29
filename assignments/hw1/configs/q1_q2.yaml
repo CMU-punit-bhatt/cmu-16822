@@ -1,0 +1,10 @@
+SRC:
+- 'data/q1/tiles5.JPG'
+- 'data/q1/facade.jpg'
+- 'data/q1/chess1.jpg'
+- 'data/custom/q1/strip.jpeg'
+- 'data/custom/q1/cathedral.jpeg'
+
+COLORS:
+- [219, 62, 177]
+- [68, 214, 44]

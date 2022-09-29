@@ -1,0 +1,25 @@
+18:01:14,49 root INFO Processing data/custom/q5/tt4.jpg:
+18:01:17,142 matplotlib.figure INFO input 1: 1.556277, 1.880952
+18:01:19,354 matplotlib.figure INFO input 1: 1.015152, 197.227273
+18:01:20,920 matplotlib.figure INFO input 1: 196.361472, 196.145022
+18:01:23,272 matplotlib.figure INFO input 1: 196.902597, 2.422078
+18:01:27,359 matplotlib.figure INFO input 1: 88.873502, 453.673672
+18:01:29,511 matplotlib.figure INFO input 1: 88.873502, 529.850041
+18:01:31,532 matplotlib.figure INFO input 1: 206.692954, 520.708877
+18:01:34,939 matplotlib.figure INFO input 1: 205.677269, 452.657987
+18:01:44,392 matplotlib.figure INFO input 1: 1.015152, 2.422078
+18:01:45,826 matplotlib.figure INFO input 1: 1.015152, 198.309524
+18:01:48,883 matplotlib.figure INFO input 1: 197.984848, 197.768398
+18:01:50,407 matplotlib.figure INFO input 1: 197.984848, 1.339827
+18:01:53,954 matplotlib.figure INFO input 1: 635.311992, 458.752096
+18:01:55,897 matplotlib.figure INFO input 1: 629.217883, 515.630452
+18:01:57,379 matplotlib.figure INFO input 1: 720.629526, 524.771616
+18:01:59,59 matplotlib.figure INFO input 1: 720.629526, 469.924630
+18:02:05,504 matplotlib.figure INFO input 1: 2.097403, 1.880952
+18:02:07,491 matplotlib.figure INFO input 1: 1.556277, 198.309524
+18:02:09,318 matplotlib.figure INFO input 1: 198.525974, 199.391775
+18:02:11,438 matplotlib.figure INFO input 1: 198.525974, 2.422078
+18:02:14,544 matplotlib.figure INFO input 1: 851.652882, 426.250179
+18:02:17,83 matplotlib.figure INFO input 1: 835.401923, 499.379493
+18:02:19,261 matplotlib.figure INFO input 1: 940.017470, 524.771616
+18:02:21,301 matplotlib.figure INFO input 1: 956.268429, 444.532507

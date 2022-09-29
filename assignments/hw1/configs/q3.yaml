@@ -1,0 +1,10 @@
+# Normal Image, Perspective Image pairs
+SRC:
+- ['data/q3/desk-normal.png', 'data/q3/desk-perspective.png']
+- ['data/custom/q3/jm-normal.jpg', 'data/custom/q3/poster-perspective.jpg']
+
+COLORS:
+- [219, 62, 177]
+- [68, 214, 44]
+- [210, 39, 48]
+- [255, 173, 0]

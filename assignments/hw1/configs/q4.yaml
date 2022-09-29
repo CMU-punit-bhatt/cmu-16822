@@ -1,0 +1,13 @@
+SRC:
+- 'data/q1/tiles5.JPG'
+- 'data/q1/facade.jpg'
+- 'data/q1/tiles3.jpg'
+- 'data/custom/q4/cell.jpg'
+- 'data/custom/q4/pavement.png'
+
+COLORS:
+- [219, 62, 177]
+- [68, 214, 44]
+- [210, 39, 48]
+- [255, 173, 0]
+- [0, 0, 255]

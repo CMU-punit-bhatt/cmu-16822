@@ -1,0 +1,68 @@
+16:44:00,958 root INFO Processing data/q1/tiles5.JPG:
+16:44:03,308 matplotlib.figure INFO input 1: 284.435065, 157.162338
+16:44:04,864 matplotlib.figure INFO input 2: 338.980519, 102.616883
+16:44:06,467 matplotlib.figure INFO input 1: 341.577922, 362.357143
+16:44:08,212 matplotlib.figure INFO input 2: 585.733766, 158.461039
+16:44:10,396 matplotlib.figure INFO input 1: 64.954545, 5.214286
+16:44:12,234 matplotlib.figure INFO input 2: 128.590909, 359.759740
+16:44:14,695 matplotlib.figure INFO input 1: 340.279221, 155.863636
+16:44:16,450 matplotlib.figure INFO input 2: 342.876623, 476.642857
+16:44:16,604 root INFO Cosine between original lines pair 1 - 0.9951799357043932
+16:44:16,604 root INFO Cosine between original lines pair 2 - 0.9851366632927617
+16:44:16,604 root INFO Cosine between rectified lines pair 1 - 0.9999883097650406
+16:44:16,604 root INFO Cosine between rectified lines pair 2 - 0.9999907561091277
+16:45:22,806 root INFO Processing data/q1/facade.jpg:
+16:45:28,533 matplotlib.figure INFO input 1: 331.086108, 87.641773
+16:45:29,859 matplotlib.figure INFO input 2: 347.321197, 164.881437
+16:45:31,761 matplotlib.figure INFO input 1: 403.898022, 81.738104
+16:45:33,625 matplotlib.figure INFO input 2: 494.420941, 308.045402
+16:45:36,848 matplotlib.figure INFO input 1: 184.478337, 90.593607
+16:45:38,842 matplotlib.figure INFO input 2: 301.567765, 89.117690
+16:45:41,708 matplotlib.figure INFO input 1: 32.458870, 334.611910
+16:45:46,60 matplotlib.figure INFO input 2: 332.070053, 332.644021
+16:45:46,384 root INFO Cosine between original lines pair 1 - 0.984483759631212
+16:45:46,384 root INFO Cosine between original lines pair 2 - 0.9999982323633396
+16:45:46,384 root INFO Cosine between rectified lines pair 1 - 0.9999606008084537
+16:45:46,384 root INFO Cosine between rectified lines pair 2 - 0.999993978744751
+16:45:53,690 root INFO Processing data/q1/chess1.jpg:
+16:45:56,572 matplotlib.figure INFO input 1: 83.912701, 5.118007
+16:46:04,746 matplotlib.figure INFO input 2: 139.854723, 64.234044
+16:46:26,622 root INFO Processing data/q1/chess1.jpg:
+16:46:30,621 matplotlib.figure INFO input 1: 140.648227, 63.837292
+16:46:33,93 matplotlib.figure INFO input 2: 129.539173, 153.503227
+16:46:37,527 matplotlib.figure INFO input 1: 245.787486, 51.141230
+16:46:39,491 matplotlib.figure INFO input 2: 277.130888, 186.036885
+16:46:42,782 matplotlib.figure INFO input 1: 122.000886, 72.169082
+16:46:45,566 matplotlib.figure INFO input 2: 304.506771, 76.533354
+16:46:49,39 matplotlib.figure INFO input 1: 109.304825, 140.807165
+16:46:52,370 matplotlib.figure INFO input 2: 331.882654, 142.790925
+16:46:52,696 root INFO Cosine between original lines pair 1 - 0.9378685689624167
+16:46:52,696 root INFO Cosine between original lines pair 2 - 0.9999159462428576
+16:46:52,697 root INFO Cosine between rectified lines pair 1 - 0.9997265825189445
+16:46:52,697 root INFO Cosine between rectified lines pair 2 - 0.9999941242892166
+16:46:57,801 root INFO Processing data/custom/q1/strip.jpeg:
+16:47:01,895 matplotlib.figure INFO input 1: 289.323313, 125.167204
+16:47:04,724 matplotlib.figure INFO input 2: 355.977636, 125.167204
+16:47:07,505 matplotlib.figure INFO input 1: 4.852183, 379.286812
+16:47:09,500 matplotlib.figure INFO input 2: 593.433663, 369.169638
+16:47:13,574 matplotlib.figure INFO input 1: 316.699196, 198.963062
+16:47:15,304 matplotlib.figure INFO input 2: 317.294324, 262.641746
+16:47:18,422 matplotlib.figure INFO input 1: 446.437075, 175.753075
+16:47:21,726 matplotlib.figure INFO input 2: 453.578610, 243.002526
+16:47:22,77 root INFO Cosine between original lines pair 1 - 0.9998559061192074
+16:47:22,77 root INFO Cosine between original lines pair 2 - 0.9962216979282532
+16:47:22,77 root INFO Cosine between rectified lines pair 1 - 0.9999958770891886
+16:47:22,77 root INFO Cosine between rectified lines pair 2 - 0.9999994802817602
+16:47:29,93 root INFO Processing data/custom/q1/cathedral.jpeg:
+16:47:49,232 matplotlib.figure INFO input 1: 187.942087, 595.022311
+16:47:51,751 matplotlib.figure INFO input 2: 205.504973, 350.020062
+16:47:54,146 matplotlib.figure INFO input 1: 273.122081, 350.020062
+16:47:55,887 matplotlib.figure INFO input 2: 288.928677, 592.387878
+16:48:05,27 matplotlib.figure INFO input 1: 368.839805, 169.122345
+16:48:07,0 matplotlib.figure INFO input 2: 111.543537, 165.609768
+16:48:09,395 matplotlib.figure INFO input 1: 167.744769, 101.505237
+16:48:11,563 matplotlib.figure INFO input 2: 315.273005, 104.139670
+16:48:11,790 root INFO Cosine between original lines pair 1 - 0.9908687449762805
+16:48:11,790 root INFO Cosine between original lines pair 2 - 0.9999889336298805
+16:48:11,791 root INFO Cosine between rectified lines pair 1 - 0.9999215986339369
+16:48:11,791 root INFO Cosine between rectified lines pair 2 - 0.9999995206702008
