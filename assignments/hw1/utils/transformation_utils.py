@@ -113,28 +113,21 @@ def calculate_test_lines_angle(
     lines = np.cross(points1, points2)
     lines /= lines[:, :, -1].reshape(n_pairs, 2, 1)
 
-    logging.info(
-        f'Cosine between original lines pair 1 - ' +
-        f'{cosine(*lines[0])}'
-    )
-    logging.info(
-        f'Cosine between original lines pair 2 - ' +
-        f'{cosine(*lines[1])}'
-    )
-
     rectified_lines = get_rectified_lines(
         lines,
         rectification_H
     ).reshape(n_pairs, 2, 3)
 
-    logging.info(
-        f'Cosine between rectified lines pair 1 - ' +
-        f'{cosine(*rectified_lines[0])}'
-    )
-    logging.info(
-        f'Cosine between rectified lines pair 2 - ' +
-        f'{cosine(*rectified_lines[1])}'
-    )
+
+    for i in range(n_pairs):
+        logging.info(
+            f'Cosine between original lines pair {i + 1} - ' +
+            f'{cosine(*lines[i])}'
+        )
+        logging.info(
+            f'Cosine between rectified lines pair {i + 1} - ' +
+            f'{cosine(*rectified_lines[i])}'
+        )
 
     rectified_img_annotated, rectification_Ht = warp_image(img, rectification_H)
 

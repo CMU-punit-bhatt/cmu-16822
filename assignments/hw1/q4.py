@@ -107,8 +107,8 @@ def direct_rectify_to_similarity(file, colors, out_path, load_annotations=False)
     calculate_test_lines_angle(
         img,
         rectification_H,
-        colors[:2],
-        n_pairs=2,
+        colors[:3],
+        n_pairs=3,
         out_path=os.path.join(out_path, 'test_lines_' + get_file_name(file))
     )
 
