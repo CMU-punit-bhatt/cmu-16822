@@ -14,7 +14,7 @@ from utils.utils import (
     read_image
 )
 
-def get_homography(file_pair, colors, out_path, load_annotations=False):
+def overlay_image(file_pair, colors, out_path, load_annotations=False):
 
     # Get 4 points from original image
     orig_img = read_image(file_pair[0])
@@ -95,7 +95,7 @@ def main(args):
 
     for file_pair in img_files:
         logging.info(f'Processing {file_pair[0]}-{file_pair[1]}:')
-        get_homography(file_pair, colors, args.out_path, args.load_annotations)
+        overlay_image(file_pair, colors, args.out_path, args.load_annotations)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

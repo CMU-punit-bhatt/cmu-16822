@@ -91,11 +91,6 @@ def rectify_to_similarity(file, colors, out_path, load_annotations=False):
     )
     affine_rectified_lines /= affine_rectified_lines[:, :, -1].reshape(2, 2, 1)
 
-    original_lines = get_rectified_lines(
-        affine_rectified_lines,
-        np.linalg.inv(affine_rectification_H)
-    ).reshape(2, 2, 3)
-
     calculate_test_lines_angle(
         img,
         rectification_H @ affine_rectification_H,
@@ -103,29 +98,6 @@ def rectify_to_similarity(file, colors, out_path, load_annotations=False):
         n_pairs=2,
         out_path=os.path.join(out_path, 'test_lines_' + get_file_name(file))
     )
-
-    # logging.info(
-    #     'Cosine between orthogonal lines pair 1 - ' +
-    #     f'{cosine(*original_lines[0])}'
-    # )
-    # logging.info(
-    #     'Cosine between orthogonal lines pair 2 - ' +
-    #     f'{cosine(*original_lines[1])}'
-    # )
-
-    # rectified_lines = get_rectified_lines(
-    #     affine_rectified_lines,
-    #     rectification_H
-    # ).reshape(2, 2, 3)
-
-    # logging.info(
-    #     'Cosine between rectified lines pair 1 - ' +
-    #     f'{cosine(*rectified_lines[0])}'
-    # )
-    # logging.info(
-    #     'Cosine between rectified lines pair 2 - ' +
-    #     f'{cosine(*rectified_lines[1])}'
-    # )
 
     # Getting perpendicular annotations on original image
     original_points1 = get_rectified_points(

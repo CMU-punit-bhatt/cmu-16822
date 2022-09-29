@@ -14,7 +14,7 @@ from utils.utils import (
     read_image
 )
 
-def get_homography(files, colors, out_path, load_annotations=False):
+def overlay_multiple_images(files, colors, out_path, load_annotations=False):
     persp_img = read_image(files[0])
     final_img = np.copy(persp_img)
 
@@ -106,7 +106,12 @@ def main(args):
 
     for files in img_files:
         logging.info(f'Processing {files[0]}:')
-        get_homography(files, colors, args.out_path, args.load_annotations)
+        overlay_multiple_images(
+            files,
+            colors,
+            args.out_path,
+            args.load_annotations
+        )
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
