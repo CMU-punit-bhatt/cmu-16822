@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="index.css">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>solution</title>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#hw1-projective-geometry-and-homography"
+id="toc-hw1-projective-geometry-and-homography">HW1: Projective Geometry
+and Homography</a>
+<ul>
+<li><a href="#number-of-late-days-used---0"
+id="toc-number-of-late-days-used---0">Number of late days used -
+0</a></li>
+<li><a href="#q1-affine-rectification-30-points"
+id="toc-q1-affine-rectification-30-points">Q1: Affine Rectification (30
+points)</a></li>
+<li><a href="#q2-metric-rectification-40-points"
+id="toc-q2-metric-rectification-40-points">Q2: Metric Rectification (40
+points)</a></li>
+<li><a href="#q3-planar-homography-from-point-correspondences-30-points"
+id="toc-q3-planar-homography-from-point-correspondences-30-points">Q3:
+Planar Homography from Point Correspondences (30 points)</a></li>
+<li><a
+href="#q4-bonus-1-10-points---metric-rectification-using-5-pairs-of-perpendicular-lines"
+id="toc-q4-bonus-1-10-points---metric-rectification-using-5-pairs-of-perpendicular-lines">Q4:
+Bonus 1 (10 points) - Metric Rectification using 5 pairs of
+perpendicular lines</a></li>
+<li><a href="#q5-bonus-2-10-points---creative---multiple-images-overlay"
+id="toc-q5-bonus-2-10-points---creative---multiple-images-overlay">Q5:
+Bonus 2 (10 points) - Creative - Multiple images overlay</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="hw1-projective-geometry-and-homography">HW1: Projective Geometry
+and Homography</h1>
+<h2 id="number-of-late-days-used---0">Number of late days used - 0</h2>
+<h2 id="q1-affine-rectification-30-points">Q1: Affine Rectification (30
+points)</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> 1 <span class="at">-c</span> configs/q1_q2.yaml</span></code></pre></div>
+<ol type="1">
+<li><strong>Input Images and Output Images: Rectified images and
+intermediate images with color coded annotation that you
+used.</strong></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tiles5</td>
+<td><img src="output/q1/tiles5.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>facade</td>
+<td><img src="output/q1/facade.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>chess1</td>
+<td><img src="output/q1/chess1.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>cathedral</td>
+<td><img src="output/q1/cathedral.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>strip</td>
+<td><img src="output/q1/strip.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><strong>Evaluate Angles (more precisely, the cosines) of at least
+another 2 pairs of parallel lines before and after
+rectification.</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 21%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Before</th>
+<th>After</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tiles5</td>
+<td>0.99517, 0.98513</td>
+<td>0.99998, 0.99999</td>
+<td><img src="output/q1/test_lines_tiles5.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>facade</td>
+<td>0.98448, 0.99982</td>
+<td>0.99996, 0.99999</td>
+<td><img src="output/q1/test_lines_facade.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>chess1</td>
+<td>0.937868, 0.99915</td>
+<td>0.99972, 0.99999</td>
+<td><img src="output/q1/test_lines_chess1.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>cathedral</td>
+<td>0.99855, 0.99622</td>
+<td>0.99999, 0.99999</td>
+<td><img src="output/q1/test_lines_cathedral.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>strip</td>
+<td>0.99087, 0.99883</td>
+<td>0.99992, 0.99999</td>
+<td><img src="output/q1/test_lines_strip.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li><strong>Brief description of your implementation (i.e., the
+algorithm followed with relevant equations and what annotations were
+used).</strong></li>
+</ol>
+<p>The overall algorithm can be found in the <a
+href="q1.py#L23">rectify_to_affinity</a>function. The main logic can be
+found in the <a
+href="utils/transformation_utils.py#L54">get_affine_rectification_H</a>
+function</p>
+<p>Algorithm:</p>
+<ul>
+<li>Find 2 pairs of originally parallel lines in the image
+<ul>
+<li>These are found by manually annotating 2 points for each line.</li>
+<li>The pixel coordinates are then stored and a column of ones is added
+to move it to <span class="math inline">\(\mathbb{P}^2\)</span>
+space.</li>
+<li>The corresponding lines are found by taking the cross product of the
+points.</li>
+</ul></li>
+<li>Find where the points of intersection for each of these pairs
+<ul>
+<li>These would be calculated using <span class="math inline">\(p_1^` =
+l_{11}^` \times l_{12}^`\)</span>, <span class="math inline">\(p_2^` =
+l_{21}^` \times l_{22}^`\)</span></li>
+</ul></li>
+<li>Find the line passing through these points. That would give the
+imaged line at infinity.
+<ul>
+<li><span class="math inline">\(l_{\infty}^` = p_1^` \times
+p_2^`\)</span></li>
+</ul></li>
+<li>Since we want to find a transformation such that <span
+class="math inline">\(l_{\infty} = \mathbf{H}^{-T}l_{\infty}^`\)</span>
+where <span class="math inline">\(l_{\infty} = [0, 0, 1]^T\)</span> and
+<span class="math inline">\(l_{\infty}^` = [l_1, l_2, l_3]^T\)</span>
+<ul>
+<li>Thus, <span class="math inline">\(\mathbf{H} = \begin{bmatrix}1
+&amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ l_1 &amp; l_2 &amp; l_3
+\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Use this to warp the original image back to an affinity.</li>
+</ul>
+<h2 id="q2-metric-rectification-40-points">Q2: Metric Rectification (40
+points)</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> 2 <span class="at">-c</span> configs/q1_q2.yaml</span></code></pre></div>
+<ol type="1">
+<li><strong>Input Images and Output Images: Rectified images and
+intermediate images with color coded annotation that you
+used.</strong></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tiles5</td>
+<td><img src="output/q2/tiles5.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>facade</td>
+<td><img src="output/q2/facade.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>chess1</td>
+<td><img src="output/q2/chess1.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>cathedral</td>
+<td><img src="output/q2/cathedral.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>strip</td>
+<td><img src="output/q2/strip.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><strong>Evaluate Angles (more precisely, the cosines) of at least
+another 2 pairs of perpendicular lines before and after
+rectification.</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 21%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Before</th>
+<th>After</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tiles5</td>
+<td>-0.1543, -0.0235</td>
+<td>-0.00035, 0.00052</td>
+<td><img src="output/q2/test_lines_tiles5.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>facade</td>
+<td>0.3917, -0.01043</td>
+<td>0.00035, 0.00004</td>
+<td><img src="output/q2/test_lines_facade.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>chess1</td>
+<td>-0.1248, 0.1594</td>
+<td>0.00095, 0.00432</td>
+<td><img src="output/q2/test_lines_chess1.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>cathedral</td>
+<td>0.1221, -0.0311</td>
+<td>0.0007, 0.0002</td>
+<td><img src="output/q2/test_lines_cathedral.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>strip</td>
+<td>0.0371, 0.0733</td>
+<td>0.0003, 0.0005</td>
+<td><img src="output/q2/test_lines_strip.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li><strong>Brief description of your implementation (i.e., the
+algorithm followed with relevant equations and what annotations were
+used).</strong></li>
+</ol>
+<p>The overall algorithm can be found in the <a
+href="q2.py#L26">rectify_to_similarity</a>function. The main logic can
+be found in the <a
+href="utils/transformation_utils.py#L15">get_similarity_rectification_H</a>
+function</p>
+<p>Algorithm:</p>
+<ul>
+<li>Using the algorithm mentioned in the first question, get the image
+to an affinity.</li>
+<li>Now, find 2 pairs of originally perpendicular lines in the image
+<ul>
+<li>These are found by manually annotating 2 points for each line.</li>
+<li>The pixel coordinates are then stored and a column of ones is added
+to move it to <span class="math inline">\(\mathbb{P}^2\)</span>
+space.</li>
+<li>The corresponding lines are found by taking the cross product of the
+points.</li>
+</ul></li>
+<li>For a pair of perpendicular lines, say, <span
+class="math inline">\(l\)</span> and <span
+class="math inline">\(m\)</span>.
+<ul>
+<li><span class="math inline">\(l^TC^*_{\infty}m = 0\)</span></li>
+<li><span
+class="math inline">\((l^{`T}\mathbf{H}_a)C^*_{\infty}(\mathbf{H}_a^Tm^`)
+= 0\)</span></li>
+<li><span class="math inline">\(l^{`T}\begin{bmatrix} A &amp; 0 \\ 0
+&amp; 1 \end{bmatrix}\begin{bmatrix} I &amp; 0 \\ 0 &amp; 0
+\end{bmatrix}\begin{bmatrix} A^T &amp; 0 \\ 0 &amp; 1 \end{bmatrix}m^` =
+0\)</span></li>
+<li><span class="math inline">\(l^{`T}\begin{bmatrix} AA^T &amp; 0 \\ 0
+&amp; 1 \end{bmatrix}m^` = 0\)</span></li>
+<li>When simplified we get the following equation,
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} l_1^`m_1^` &amp;
+l_1^`m_2^` + l_2^`m_1^`\end{bmatrix}\begin{bmatrix} s_{11} \\ s_{12}
+\end{bmatrix} = 0\)</span></li>
+<li>Here, <span class="math inline">\(s_{11}, s_{12}\)</span> come from
+the symmetric matrix <span class="math inline">\(AA^T = \begin{bmatrix}
+s_{11} &amp; s_{12} \\ s_{12} &amp; 1\end{bmatrix}\)</span></li>
+</ul></li>
+<li>From the above derivation, it can be seen that we need to find the 2
+variables <span class="math inline">\(s_{11}, s_{12}\)</span> to get
+<span class="math inline">\(A\)</span> and <span
+class="math inline">\(\mathbf{H}_a\)</span></li>
+</ul></li>
+<li>Using the 2 pairs of perpendicular lines, construct the following
+matrix
+<ul>
+<li><span class="math inline">\(\mathbf{L} = \begin{bmatrix}
+l_{11}^`m_{11}^` &amp; l_{11}^`m_{12}^` + l_{12}^`m_{11}^` \\
+l_{21}^`m_{21}^` &amp; l_{21}^`m_{22}^` + l_{22}^`m_{21}^`
+\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Solve the equation <span class="math inline">\(\mathbf{L}s =
+0\)</span> by finding the nullspace using SVD.</li>
+<li>Construct matrix <span class="math inline">\(A\)</span> and using
+that co{nstruct back <span
+class="math inline">\(\mathbf{H}_a\)</span>.</li>
+<li>The rectification matrix can then be found by taking the inverse i.e
+<span class="math inline">\(\mathbf{H}_a^{-1}\)</span></li>
+<li>Use this to warp the affine rectified image back to a
+similarity.</li>
+</ul>
+<h2 id="q3-planar-homography-from-point-correspondences-30-points">Q3:
+Planar Homography from Point Correspondences (30 points)</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> 3 <span class="at">-c</span> configs/q3.yaml<span class="kw">`</span></span></code></pre></div>
+<ol type="1">
+<li><strong>Input Images and Output Images: Warped images and
+intermediate images with annotation that you used (i.e., corners/point
+correspondences).</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>desk</td>
+<td><img src="output/q3/desk-normal.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>jose mourinho :)</td>
+<td><img src="output/q3/i_m_jose_mourinho.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><strong>Brief description of your implementation (i.e., the
+algorithm followed with relevant equations and what annotations were
+used).</strong></li>
+</ol>
+<p>The overall algorithm can be found in the <a
+href="q3.py#L17">overlay_image</a> function.</p>
+<p>Algorithm:</p>
+<ul>
+<li>Find 4 pairs of point correspondences using manual annotations.</li>
+<li>Need to compute <span class="math inline">\(\mathbf{H}\)</span> such
+that <span class="math inline">\(\mathbf{x}^` = \mathbf{H}
+\mathbf{x}\)</span></li>
+<li>Construct the required matrix as per Direct Linear Transformation
+algorithm
+<ul>
+<li>For a pair of point correspondences, <span
+class="math inline">\(\begin{bmatrix}x^`_1 \\ x^`_2 \\ 1\end{bmatrix} =
+\begin{bmatrix}h_1 &amp; h_2 &amp; h_3 \\ h_4 &amp; h_5 &amp; h_6 \\ h_7
+&amp; h_8 &amp; h_9\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\
+1\end{bmatrix}\)</span></li>
+<li>On simplification, <span class="math inline">\(\begin{bmatrix}x_1
+&amp; x_2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -x_1^`x_1 &amp;
+-x^`_1x_2 &amp; -x^`_1 \\ 0 &amp; 0 &amp; 0 &amp; x_1 &amp; x_2 &amp; 1
+&amp; -x_2^`x_1 &amp; -x^`_2x_2 &amp;
+-x^`_2\end{bmatrix}\begin{bmatrix}h_1 \\ h_2 \\ h_3 \\ h_4 \\ h_5 \\ h_6
+\\ h_7 \\ h_8 \\ h_9\end{bmatrix} = 0\)</span></li>
+</ul></li>
+<li>Using the 4 pairs, construct a <span
+class="math inline">\((8\times9)\)</span> matrix <span
+class="math inline">\(A\)</span> and solve the equation <span
+class="math inline">\(Ah = 0\)</span> by finding the nullspace using
+SVD.</li>
+<li>Reshape <span class="math inline">\(h\)</span> to get the homography
+matrix.</li>
+<li>Use this to warp the normal image to the new perspective and combine
+them to get a composite image.</li>
+</ul>
+<h2
+id="q4-bonus-1-10-points---metric-rectification-using-5-pairs-of-perpendicular-lines">Q4:
+Bonus 1 (10 points) - Metric Rectification using 5 pairs of
+perpendicular lines</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> 4 <span class="at">-c</span> configs/q4.yaml</span></code></pre></div>
+<ol type="1">
+<li><strong>Input Images and Output Images: Rectified images and
+intermediate images with color coded annotation that you used. Annotate
+the lines that were used.</strong></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tiles5</td>
+<td><img src="output/q4/tiles5.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>facade</td>
+<td><img src="output/q4/facade.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>tiles3</td>
+<td><img src="output/q4/tiles3.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>cell</td>
+<td><img src="output/q4/cell.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>pacement</td>
+<td><img src="output/q4/pavement.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><strong>Angles (more precisely, the cosines) of at least 3 pairs of
+perpendicular lines before and after rectification.</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 21%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Before</th>
+<th>After</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tiles5</td>
+<td>-0.0633, -0.0178, 0.1851</td>
+<td>0.00028, 0.00639, 0.0131</td>
+<td><img src="output/q4/test_lines_tiles5.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>facade</td>
+<td>-0.3069, 0.0179, 0.0196</td>
+<td>0.00137, 0.00091, 0.00027</td>
+<td><img src="output/q4/test_lines_facade.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>tiles3</td>
+<td>-0.0311, 0.46738, -0.5143</td>
+<td>0.0016, -0.0042, 0.00000</td>
+<td><img src="output/q4/test_lines_tiles3.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>cell</td>
+<td>0.14989, 0.39105, 0.3047</td>
+<td>0.00096, 0.01819, 0.0161</td>
+<td><img src="output/q4/test_lines_cell.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>pavement</td>
+<td>-0.2902, -0.7477, -0.8504</td>
+<td>-0.0144, -0.0081, -0.0069</td>
+<td><img src="output/q4/test_lines_pavement.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li><strong>Brief description of your implementation.</strong></li>
+</ol>
+<p>The overall algorithm can be found in the <a
+href="q4.py#L22">direct_rectify_to_similarity</a> function.</p>
+<p>Algorithm:</p>
+<ul>
+<li>Find 5 pairs of originally parallel lines in the image
+<ul>
+<li>These are found by manually annotating 2 points for each line.</li>
+<li>The pixel coordinates are then stored and a column of ones is added
+to move it to <span class="math inline">\(\mathbb{P}^2\)</span>
+space.</li>
+<li>The corresponding lines are found by taking the cross product of the
+points.</li>
+</ul></li>
+<li>The imaged dual conic at infinity can be defined as <span
+class="math inline">\(C^{`*}_{\infty} = \begin{bmatrix}a &amp; b/2 &amp;
+d/2 \\ b/2 &amp; c &amp; e/2 \\ d/2 &amp; e/2 &amp;
+f\end{bmatrix}\)</span></li>
+<li>Thus, need to find these variables - <span
+class="math inline">\(a,b,c,d,e,f\)</span>
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}l_1^` &amp; l_2^` &amp;
+l_3^`\end{bmatrix}C^{`*}_{\infty}\begin{bmatrix}m_1^` \\ m_2^` \\
+m^`_3\end{bmatrix} = 0\)</span></li>
+<li><span class="math inline">\(\begin{bmatrix}l_1^`m_1^` &amp;
+\frac{l_1^`m_2^` + l_2^`m_1^`}{2} &amp; l_2^`m_2^` &amp;
+\frac{l_1^`m_3^` + l_3^`m_1^`}{2} &amp; \frac{l_3^`m_2^` +
+l_2^`m_3^`}{2} &amp; l_3^`m_3^`\end{bmatrix}\begin{bmatrix}a \\ b \\ c
+\\ d \\ e \\ f\end{bmatrix} = 0\)</span></li>
+</ul></li>
+<li>Using the 5 pairs of perpendicular lines, construct the <span
+class="math inline">\((5 \times 6)\)</span> matrix <span
+class="math inline">\(L\)</span> as shown above.</li>
+<li>Solve the equation <span class="math inline">\(Lc = 0\)</span> by
+finding the nullspace using SVD.</li>
+<li>Construct <span class="math inline">\(C^{`*}_{\infty}\)</span> and
+decompose it using SVD as <span class="math inline">\(U
+\begin{bmatrix}\sigma &amp; 0 \\ 0 &amp; 0\end{bmatrix}U_T\)</span></li>
+<li>Construct the projective transformation matrix <span
+class="math inline">\(H = U\sqrt{\sigma}\)</span></li>
+<li>Required rectification transformation can be found by inversing this
+matrix i.e. <span class="math inline">\(H_{-1}\)</span></li>
+<li>Use this to warp the original image back to a similarity.</li>
+</ul>
+<h2 id="q5-bonus-2-10-points---creative---multiple-images-overlay">Q5:
+Bonus 2 (10 points) - Creative - Multiple images overlay</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> 5 <span class="at">-c</span> configs/q5.yaml</span></code></pre></div>
+<ol type="1">
+<li><strong>Input Images and Output Images.</strong></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intermediate - TA1</td>
+<td><img src="output/q5/pic2.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Intermediate - TA2</td>
+<td><img src="output/q5/pic3.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Intermediate - TA3</td>
+<td><img src="output/q5/pic4.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Final</td>
+<td><img src="output/q5/tt4.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<p>:)</p>
+<ol start="2" type="1">
+<li><strong>Brief description of your implementation.</strong></li>
+</ol>
+<p>The overall algorithm can be found in the <a
+href="q5.py#L17">overlay_multiple_images</a>function.</p>
+<p>Algorithm: - The logic is the same as that for q3. - However, it is
+done multiple number of times and each time the perspective image is
+obtained from the previous composite/overlaid image.</p>
+</body>
+</html>

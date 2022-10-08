@@ -8,8 +8,6 @@ import yaml
 
 from utils.transformation_utils import(
     calculate_test_lines_angle,
-    cosine,
-    get_rectified_lines,
     get_rectified_points,
     warp_image,
 )
