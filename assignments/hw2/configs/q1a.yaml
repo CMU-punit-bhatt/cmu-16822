@@ -1,0 +1,7 @@
+IMG: 'data/q1/bunny.jpeg'
+
+CORRESPONDENCES: 'data/q1/bunny.txt'
+
+SURFACE_POINTS: 'data/q1/bunny_pts.npy'
+
+BOUNDING_BOX: 'data/q1/bunny_bd.npy'

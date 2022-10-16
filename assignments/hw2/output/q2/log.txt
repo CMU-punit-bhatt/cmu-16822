@@ -1,0 +1,48 @@
+01:18:54,215 root INFO Intrinsics matrix for data/q2/q2a.png:
+[[840.45506444   0.         632.03435507]
+ [  0.         840.45506444 523.76873923]
+ [  0.           0.           1.        ]]
+00:29:38,669 root INFO Intrinsics matrix for data/q2/q2b.png:
+[[1.12490319e+03 1.02844692e+01 5.51902550e+02]
+ [0.00000000e+00 1.01632011e+03 4.11483623e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+
+00:29:38,672 root INFO Angle between Plane 1 and Plane 2: 92.51287170642617 or 87.48712829357383
+00:29:38,672 root INFO Angle between Plane 1 and Plane 3: 102.51463630936175 or 77.48536369063825
+00:29:38,672 root INFO Angle between Plane 2 and Plane 3: 85.41397750318885 or 94.58602249681115
+17:40:36,814 matplotlib.figure INFO input 1: 243.113220, 233.395416
+17:40:39,186 matplotlib.figure INFO input 1: 642.207303, 383.487992
+17:40:41,499 matplotlib.figure INFO input 1: 705.841022, 49.410969
+17:40:43,979 matplotlib.figure INFO input 1: 209.913019, 5.144034
+17:40:49,481 matplotlib.figure INFO input 1: 75.037202, 414.613180
+17:40:51,866 matplotlib.figure INFO input 1: 243.804891, 315.704248
+17:40:54,127 matplotlib.figure INFO input 1: 196.079602, 207.803595
+17:40:55,997 matplotlib.figure INFO input 1: 12.095154, 288.037414
+17:41:00,875 matplotlib.figure INFO input 1: 167.029426, 493.463658
+17:41:04,490 matplotlib.figure INFO input 1: 338.563798, 368.962904
+17:41:07,289 matplotlib.figure INFO input 1: 249.338257, 315.704248
+17:41:09,645 matplotlib.figure INFO input 1: 78.495556, 416.688193
+17:41:10,11 root INFO Intrinsics matrix for data/q2/q2c.jpeg: 
+[[805.05588754  20.96652265 390.5708832 ]
+ [  0.         716.89468007 133.28899322]
+ [  0.           0.           1.        ]]
+
+17:41:10,12 root INFO Angle between Plane 1 and Plane 2: 87.21217815860226 or 92.78782184139774
+17:41:10,12 root INFO Angle between Plane 1 and Plane 3: 93.1118427142742 or 86.8881572857258
+17:41:10,12 root INFO Angle between Plane 2 and Plane 3: 112.74799171330832 or 67.25200828669168
+20:38:38,519 root INFO Intrinsics matrix for data/q2/q2b.png: 
+[[1.12490319e+03 1.02844692e+01 5.51902550e+02]
+ [0.00000000e+00 1.01632011e+03 4.11483623e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+
+20:38:38,522 root INFO Angle between Plane 1 and Plane 2: 92.51287170642617 or 87.48712829357383
+20:38:38,522 root INFO Angle between Plane 1 and Plane 3: 102.51463630936175 or 77.48536369063825
+20:38:38,522 root INFO Angle between Plane 2 and Plane 3: 85.41397750318885 or 94.58602249681115
+20:40:10,717 root INFO Intrinsics matrix for data/q2/q2c.jpeg: 
+[[805.05588754  20.96652265 390.5708832 ]
+ [  0.         716.89468007 133.28899322]
+ [  0.           0.           1.        ]]
+
+20:40:10,720 root INFO Angle between Plane 1 and Plane 2: 87.21217815860226 or 92.78782184139774
+20:40:10,720 root INFO Angle between Plane 1 and Plane 3: 93.1118427142742 or 86.8881572857258
+20:40:10,720 root INFO Angle between Plane 2 and Plane 3: 112.74799171330832 or 67.25200828669168

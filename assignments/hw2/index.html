@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="index.css">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>solution</title>
+  <!-- <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style> -->
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="hw2-single-view-reconstruction">HW2: Single-view
+Reconstruction</h1>
+<h2 id="number-of-late-days-1">Number of late days: 1</h2>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#q1-camera-matrix-p-from-2d-3d-correspondences-30-points"
+id="toc-q1-camera-matrix-p-from-2d-3d-correspondences-30-points">Q1:
+Camera matrix <code>P</code> from 2D-3D correspondences (30 points)</a>
+<ul>
+<li><a href="#a-stanford-bunny-15-points"
+id="toc-a-stanford-bunny-15-points">(a) Stanford Bunny (15
+points)</a></li>
+<li><a href="#b-cuboid-15-points" id="toc-b-cuboid-15-points">(b) Cuboid
+(15 points)</a></li>
+</ul></li>
+<li><a
+href="#q2-camera-calibration-k-from-annotations-40-points-10-points-bonus"
+id="toc-q2-camera-calibration-k-from-annotations-40-points-10-points-bonus">Q2:
+Camera calibration <code>K</code> from annotations (40 points + 10
+points bonus)</a>
+<ul>
+<li><a href="#a-camera-calibration-from-vanishing-points-20-points"
+id="toc-a-camera-calibration-from-vanishing-points-20-points">(a) Camera
+calibration from vanishing points (20 points)</a></li>
+<li><a href="#b-camera-calibration-from-metric-planes-20-points"
+id="toc-b-camera-calibration-from-metric-planes-20-points">(b) Camera
+calibration from metric planes (20 points)</a></li>
+<li><a
+href="#c-camera-calibration-from-rectangles-with-known-sizes-10-points-bonus"
+id="toc-c-camera-calibration-from-rectangles-with-known-sizes-10-points-bonus">(c)
+Camera calibration from rectangles with known sizes (10 points
+bonus)</a></li>
+</ul></li>
+<li><a href="#q3-single-view-reconstruction-30-points-10-points-bonus"
+id="toc-q3-single-view-reconstruction-30-points-10-points-bonus">Q3:
+Single View Reconstruction (30 points + 10 points bonus)</a></li>
+</ul>
+</nav>
+<h1 id="q1-camera-matrix-p-from-2d-3d-correspondences-30-points">Q1:
+Camera matrix <code>P</code> from 2D-3D correspondences (30 points)</h1>
+<h2 id="a-stanford-bunny-15-points">(a) Stanford Bunny (15 points)</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q1a <span class="at">-c</span> configs/q1a.yaml <span class="at">-o</span> output/q1</span></code></pre></div>
+<p><strong>Matrix P:</strong></p>
+<p><span class="math inline">\(\begin{bmatrix} 6.43169368e+03 &amp;
+-2.94843744e+03 &amp; 1.14658061e+03 &amp; 2.22724350e+03 \\
+-9.34819249e+02 &amp; -6.75486473e+03 &amp; 2.02949013e+03 &amp;
+1.82218778e+03 \\ 5.79307220e-01 &amp; -1.42385366e+00 &amp;
+-7.35268478e-01 &amp; 1.00000000e+00 \\ \end{bmatrix}\)</span></p>
+<p><strong>Results:</strong></p>
+<p><img src="output/q1/bunny.png" width="800"></p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h2 id="b-cuboid-15-points">(b) Cuboid (15 points)</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q1b <span class="at">-c</span> configs/q1b.yaml <span class="at">-o</span> output/q1</span></code></pre></div>
+<p><strong>Matrix P</strong></p>
+<p><span class="math inline">\(\begin{bmatrix}  6.43169368e+03 &amp;
+-2.94843744e+03 &amp; 1.14658061e+03 &amp; 2.22724350e+03
+\\  -9.34819249e+02 &amp; -6.75486473e+03 &amp; 2.02949013e+03 &amp;
+1.82218778e+03 \\  5.79307220e-01 &amp; -1.42385366e+00 &amp;
+-7.35268478e-01 &amp; 1.00000000e+00 \\  \end{bmatrix}\)</span></p>
+<p><strong>Results</strong></p>
+<p><img src="output/q1/cube.png" width="800"></p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h1
+id="q2-camera-calibration-k-from-annotations-40-points-10-points-bonus">Q2:
+Camera calibration <code>K</code> from annotations (40 points + 10
+points bonus)</h1>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q2a <span class="at">-c</span> configs/q2a.yaml <span class="at">-o</span> output/q2</span></code></pre></div>
+<h2 id="a-camera-calibration-from-vanishing-points-20-points">(a) Camera
+calibration from vanishing points (20 points)</h2>
+<p><strong>1. Output plots of the vanishing points and the principal
+point. Also include visualizations of the annotations that you
+used.</strong></p>
+<p><img src="output/q2/q2a.png" width="800"></p>
+<p><strong>2. Report <code>K</code> for the input image.</strong></p>
+<p><span class="math inline">\(\begin{bmatrix}  840.45506444 &amp; 0.
+&amp; 632.03435507 \\  0. &amp; 840.45506444 &amp; 523.76873923\\  0.
+&amp; 0. &amp; 1. \\  \end{bmatrix}\)</span></p>
+<p><strong>3. Brief description of your implementation (i.e., the
+algorithm followed with relevant equations).</strong></p>
+<ul>
+<li>Annotate 3 pairs of parallel lines such that each one is
+perpendicular to the others.</li>
+<li>For each pair of parallel lines, say <span
+class="math inline">\(\mathbf{l}_1\)</span> and <span
+class="math inline">\(\mathbf{l}_2\)</span>, compute the vanishing point
+- <span class="math inline">\(\mathbf{v} =
+\mathbf{l}_1\times\mathbf{l}_2\)</span>.</li>
+<li>Considering each vanishing point is perpendicular to the others, the
+cosine of the angle between them is 0.
+<ul>
+<li>Thus, <span class="math inline">\(\cos(\theta) =
+\frac{\mathbf{v}_i^T \omega \mathbf{v}_j}{\sqrt{\mathbf{v}_i^T \omega
+\mathbf{v}_i}\sqrt{\mathbf{v}_j^T \omega \mathbf{v}_j}} =
+0\)</span></li>
+<li><span class="math inline">\(\therefore \mathbf{v}_i^T \omega
+\mathbf{v}_j = 0\)</span></li>
+<li>Here, <span class="math inline">\(\omega =
+(\mathbf{K}\mathbf{K}^T)^{-1}\)</span> is the image of the absolute
+conic given by a symmetric matrix <span
+class="math inline">\(\begin{bmatrix} \omega_1 &amp; \omega_2 &amp;
+\omega_3 \\ \omega_2 &amp; \omega_4 &amp; \omega_5 \\ \omega_3 &amp;
+\omega_5 &amp; \omega_6 \end{bmatrix}\)</span></li>
+<li>Based on the question’s assumption of zero skew and square pixels, $
+_2 = 0$ and $ _1 = _4$</li>
+</ul></li>
+<li>Therefore, we have 4 variables with 3 degrees of freedom as scale
+doesn’t matter.</li>
+<li>Each of the 3 pairs of vanishing points gives 1 constraint - <span
+class="math inline">\(\mathbf{v}^T \omega \mathbf{v}^{&#39;} =
+0\)</span> (Also, renaming the <span
+class="math inline">\(\omega\)</span> variables)
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}v_1 &amp; v_2 &amp; v_3
+\end{bmatrix} \begin{bmatrix} \omega_1 &amp; 0 &amp; \omega_2 \\ 0 &amp;
+\omega_1 &amp; \omega_3 \\ \omega_2 &amp; \omega_3 &amp; \omega_4
+\end{bmatrix} \begin{bmatrix}v_1^{&#39;} \\ v_2^{&#39;} \\ v_3^{&#39;}
+\end{bmatrix} = 0\)</span></li>
+<li><span class="math inline">\(\begin{bmatrix}v_{1}\omega_1 +
+v_{3}\omega_2 &amp; v_{2}\omega_1 + v_{3}\omega_3 &amp; v_{1}\omega_2 +
+v_{2}\omega_3 + v_{3}\omega_4 \end{bmatrix}\begin{bmatrix}v_1^{&#39;} \\
+v_2^{&#39;} \\ v_3^{&#39;} \end{bmatrix} = 0\)</span></li>
+<li><span class="math inline">\(\begin{bmatrix}v_1v_1^{&#39;} +
+v_2v_2^{&#39;} &amp; v_3v_1^{&#39;} + v_1v_3^{&#39;} &amp;
+v_3v_2^{&#39;} + v_2v_3^{&#39;} &amp; v_3v_3^{&#39;}
+\end{bmatrix}\begin{bmatrix}\omega_1 \\ \omega_2 \\ \omega_3 \\ \omega_4
+\end{bmatrix} = 0\)</span></li>
+</ul></li>
+<li>Construct matrix A of shape <span
+class="math inline">\((3\times4)\)</span> consisting of the 3 equations
+like above corresponding to each pair of vanishing points.</li>
+<li>Solve the <span class="math inline">\(A\omega = 0\)</span> using SVD
+under the constraint that <span class="math inline">\(||\omega|| =
+1\)</span></li>
+<li>Construct the matrix <span class="math inline">\(\omega =
+\begin{bmatrix} \omega_1 &amp; 0 &amp; \omega_2 \\ 0 &amp; \omega_1
+&amp; \omega_3 \\ \omega_2 &amp; \omega_3 &amp; \omega_4
+\end{bmatrix}\)</span></li>
+<li>Use Cholesky decomposition <span class="math inline">\(\omega =
+\mathbf{L}\mathbf{L}^T = (\mathbf{K}\mathbf{K}^T)^{-1}\)</span></li>
+<li>Get the intrinsics matrix: <span class="math inline">\(\mathbf{K} =
+(\mathbf{L}^{-1})^T\)</span></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+<h2 id="b-camera-calibration-from-metric-planes-20-points">(b) Camera
+calibration from metric planes (20 points)</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q2b <span class="at">-c</span> configs/q2b.yaml <span class="at">-o</span> output/q2</span></code></pre></div>
+<p><strong>1. Visualizations of annotations that you used.</strong></p>
+<p><img src="output/q2/q2b.png" width="800"></p>
+<p><strong>2. Evaluate angles between each pair of planes. This will
+reflect the correctness of your calibration result.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Angle between planes(degree)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plane 1 &amp; Plane 2</td>
+<td>92.51 or 87.49</td>
+</tr>
+<tr class="even">
+<td>Plane 1 &amp; Plane 3</td>
+<td>102.51 or 77.48</td>
+</tr>
+<tr class="odd">
+<td>Plane 2 &amp; Plane 3</td>
+<td>85.41 or 94.59</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. Report <code>K</code> for the input image.</strong></p>
+<p><span class="math inline">\(\begin{bmatrix}  1.12490319e+03 &amp;
+1.02844692e+01 &amp; 5.51902550e+02 \\  0.00000000e+00 &amp;
+1.01632011e+03 &amp; 4.11483623e+02\\  0.00000000e+00 &amp;
+0.00000000e+00 &amp; 1.00000000e+00 \\  \end{bmatrix}\)</span></p>
+<p><strong>4. Brief description of your implementation (i.e., the
+algorithm followed with relevant equations).</strong></p>
+<ul>
+<li>Get the homographies for the 3 planes using 2D to 2D correspondences
+<ul>
+<li>Brief algorithm
+<ul>
+<li>Find 4 pairs of point correspondences using manual annotations.</li>
+<li>Need to compute <span class="math inline">\(\mathbf{H}\)</span> such
+that <span class="math inline">\(\mathbf{x}^` = \mathbf{H}
+\mathbf{x}\)</span></li>
+<li>Construct the required matrix as per Direct Linear Transformation
+algorithm
+<ul>
+<li>For a pair of point correspondences, <span
+class="math inline">\(\begin{bmatrix}x^`_1 \\ x^`_2 \\ 1\end{bmatrix} =
+\begin{bmatrix}h_1 &amp; h_2 &amp; h_3 \\ h_4 &amp; h_5 &amp; h_6 \\ h_7
+&amp; h_8 &amp; h_9\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\
+1\end{bmatrix}\)</span></li>
+<li>On simplification, <span class="math inline">\(\begin{bmatrix}x_1
+&amp; x_2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -x_1^`x_1 &amp;
+-x^`_1x_2 &amp; -x^`_1 \\ 0 &amp; 0 &amp; 0 &amp; x_1 &amp; x_2 &amp; 1
+&amp; -x_2^`x_1 &amp; -x^`_2x_2 &amp;
+-x^`_2\end{bmatrix}\begin{bmatrix}h_1 \\ h_2 \\ h_3 \\ h_4 \\ h_5 \\ h_6
+\\ h_7 \\ h_8 \\ h_9\end{bmatrix} = 0\)</span></li>
+</ul></li>
+<li>Using the 4 pairs, construct a <span
+class="math inline">\((8\times9)\)</span> matrix <span
+class="math inline">\(A\)</span> and solve the equation <span
+class="math inline">\(Ah = 0\)</span> by finding the nullspace using
+SVD.</li>
+<li>Reshape <span class="math inline">\(h\)</span> to get the homography
+matrix.</li>
+</ul></li>
+</ul></li>
+<li>For each homography, <span class="math inline">\(\mathbf{H}_i =
+\begin{bmatrix}h_1 &amp; h_2 &amp; h_3\end{bmatrix}\)</span>, the
+following 2 constraints hold true
+<ul>
+<li><p>Here, <span class="math inline">\(\omega =
+(\mathbf{K}\mathbf{K}^T)^{-1}\)</span> is the image of the absolute
+conic given by a symmetric matrix <span
+class="math inline">\(\begin{bmatrix} \omega_1 &amp; \omega_2 &amp;
+\omega_3 \\ \omega_2 &amp; \omega_4 &amp; \omega_5 \\ \omega_3 &amp;
+\omega_5 &amp; \omega_6 \end{bmatrix}\)</span></p></li>
+<li><p><span class="math inline">\(h_1^T\omega h_2 = 0\)</span></p>
+<ul>
+<li>This corresponds to the following equation</li>
+<li><span class="math inline">\(\begin{bmatrix}c_1 &amp; c_2 + c_4 &amp;
+c_3 + c_7 &amp; c_5 &amp; c_6 + c_8 &amp;
+c_9\end{bmatrix}\begin{bmatrix}\omega_1 \\ \omega_2 \\ \omega_3 \\
+\omega_4 \\ \omega_5 \\ \omega_6\end{bmatrix} = 0\)</span></li>
+<li>Here, <span class="math inline">\(\mathbf{C} = \begin{bmatrix} c_1
+&amp; c_2 &amp; c_3 \\ c_4 &amp; c_5 &amp; c_6 \\ c_7 &amp; c_8 &amp;
+c_9 \end{bmatrix}\)</span> is a 3 x 3 matrix created by <span
+class="math inline">\(h_1h_2^T\)</span></li>
+</ul></li>
+<li><p><span class="math inline">\(h_1^T\omega h_1 - h_2^T\omega h_2 =
+0\)</span></p>
+<ul>
+<li>This corresponds to the following equation</li>
+<li><span class="math inline">\(\begin{bmatrix}c_1 &amp; c_2 + c_4 &amp;
+c_3 + c_7 &amp; c_5 &amp; c_6 + c_8 &amp;
+c_9\end{bmatrix}\begin{bmatrix}\omega_1 \\ \omega_2 \\ \omega_3 \\
+\omega_4 \\ \omega_5 \\ \omega_6\end{bmatrix} = 0\)</span></li>
+<li>Here, <span class="math inline">\(\mathbf{C} = \begin{bmatrix} c_1
+&amp; c_2 &amp; c_3 \\ c_4 &amp; c_5 &amp; c_6 \\ c_7 &amp; c_8 &amp;
+c_9 \end{bmatrix}\)</span> is a 3 x 3 matrix created by <span
+class="math inline">\(h_1h_1^T - h_2h_2^T\)</span></li>
+</ul></li>
+</ul></li>
+<li>Construct matrix A of shape <span
+class="math inline">\((6\times6)\)</span> consisting of the 6 equations
+like the ones above - 2 for each square/plane/homography.</li>
+<li>Solve the <span class="math inline">\(A\omega = 0\)</span> using SVD
+under the constraint that <span class="math inline">\(||\omega|| =
+1\)</span></li>
+<li>Construct the matrix <span class="math inline">\(\omega =
+\begin{bmatrix} \omega_1 &amp; 0 &amp; \omega_2 \\ 0 &amp; \omega_1
+&amp; \omega_3 \\ \omega_2 &amp; \omega_3 &amp; \omega_4
+\end{bmatrix}\)</span></li>
+<li>Use Cholesky decomposition <span class="math inline">\(\omega =
+\mathbf{L}\mathbf{L}^T = (\mathbf{K}\mathbf{K}^T)^{-1}\)</span></li>
+<li>Get the intrinsics matrix: <span class="math inline">\(\mathbf{K} =
+(\mathbf{L}^{-1})^T\)</span></li>
+<li>For the angles between planes,
+<ul>
+<li>Compute the unit normals to the plane
+<ul>
+<li>Find vanishing points using the annotations</li>
+<li>Find the direction vectors
+<ul>
+<li><span class="math inline">\(\mathbf{d}_1 =
+\mathbf{K}^{-1}\mathbf{v}_1\)</span></li>
+<li><span class="math inline">\(\mathbf{d}_2 =
+\mathbf{K}^{-1}\mathbf{v}_2\)</span></li>
+</ul></li>
+<li>Calculate normal <span class="math inline">\(\mathbf{n} =
+\mathbf{d}_1 \times \mathbf{d}_2\)</span></li>
+<li>Normalize the normal vector to get a unit vector</li>
+</ul></li>
+<li>Angle is given by <span
+class="math inline">\(\cos^{-1}(\mathbf{n}_i^T\mathbf{n}_j)\)</span></li>
+</ul></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+<h2
+id="c-camera-calibration-from-rectangles-with-known-sizes-10-points-bonus">(c)
+Camera calibration from rectangles with known sizes (10 points
+bonus)</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q2c <span class="at">-c</span> configs/q2c.yaml <span class="at">-o</span> output/q2</span></code></pre></div>
+<p><strong>1. Input image.</strong></p>
+<p><img src="data/q2/q2c.jpeg" width="400"></p>
+<p><strong>2. Visualizations of annotations that you used.</strong></p>
+<p><img src="output/q2/q2c.png" width="800"></p>
+<p><strong>3. Evaluate angles between each pair of planes. This will
+reflect the correctness of your calibration result.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Angle between planes(degree)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plane 1 &amp; Plane 2</td>
+<td>87.21 or 92.79</td>
+</tr>
+<tr class="even">
+<td>Plane 1 &amp; Plane 3</td>
+<td>93.11 or 86.89</td>
+</tr>
+<tr class="odd">
+<td>Plane 2 &amp; Plane 3</td>
+<td>112.75 or 67.25</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. Report <code>K</code> for your input image.</strong></p>
+<p><span class="math inline">\(\begin{bmatrix}  805.05588754 &amp;
+20.96652265 &amp; 390.5708832 \\  0. &amp; 716.89468007 &amp;
+133.28899322\\  0. &amp; 0. &amp; 1. \\  \end{bmatrix}\)</span></p>
+<p><strong>5. Brief description of your implementation (i.e., the
+algorithm followed with relevant equations, and in particular
+emphasizing the differences compared to part b).</strong></p>
+<ul>
+<li>Get the homographies for the 3 planes using 2D to 2D correspondences
+<ul>
+<li>Brief algorithm
+<ul>
+<li>Find 4 pairs of point correspondences using manual annotations.</li>
+<li>Need to compute <span class="math inline">\(\mathbf{H}\)</span> such
+that <span class="math inline">\(\mathbf{x}^` = \mathbf{H}
+\mathbf{x}\)</span></li>
+<li>Construct the required matrix as per Direct Linear Transformation
+algorithm
+<ul>
+<li>For a pair of point correspondences, <span
+class="math inline">\(\begin{bmatrix}x^`_1 \\ x^`_2 \\ 1\end{bmatrix} =
+\begin{bmatrix}h_1 &amp; h_2 &amp; h_3 \\ h_4 &amp; h_5 &amp; h_6 \\ h_7
+&amp; h_8 &amp; h_9\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\
+1\end{bmatrix}\)</span></li>
+<li>On simplification, <span class="math inline">\(\begin{bmatrix}x_1
+&amp; x_2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -x_1^`x_1 &amp;
+-x^`_1x_2 &amp; -x^`_1 \\ 0 &amp; 0 &amp; 0 &amp; x_1 &amp; x_2 &amp; 1
+&amp; -x_2^`x_1 &amp; -x^`_2x_2 &amp;
+-x^`_2\end{bmatrix}\begin{bmatrix}h_1 \\ h_2 \\ h_3 \\ h_4 \\ h_5 \\ h_6
+\\ h_7 \\ h_8 \\ h_9\end{bmatrix} = 0\)</span></li>
+</ul></li>
+<li>Using the 4 pairs, construct a <span
+class="math inline">\((8\times9)\)</span> matrix <span
+class="math inline">\(A\)</span> and solve the equation <span
+class="math inline">\(Ah = 0\)</span> by finding the nullspace using
+SVD.</li>
+<li>Reshape <span class="math inline">\(h\)</span> to get the homography
+matrix.</li>
+</ul></li>
+</ul></li>
+<li>For each homography, <span class="math inline">\(\mathbf{H}_i =
+\begin{bmatrix}h_1 &amp; h_2 &amp; h_3\end{bmatrix}\)</span>, the
+following 2 constraints hold true
+<ul>
+<li><p>Here, <span class="math inline">\(\omega =
+(\mathbf{K}\mathbf{K}^T)^{-1}\)</span> is the image of the absolute
+conic given by a symmetric matrix <span
+class="math inline">\(\begin{bmatrix} \omega_1 &amp; \omega_2 &amp;
+\omega_3 \\ \omega_2 &amp; \omega_4 &amp; \omega_5 \\ \omega_3 &amp;
+\omega_5 &amp; \omega_6 \end{bmatrix}\)</span></p></li>
+<li><p><span class="math inline">\(h_1^T\omega h_2 = 0\)</span></p>
+<ul>
+<li>This corresponds to the following equation</li>
+<li><span class="math inline">\(\begin{bmatrix}c_1 &amp; c_2 + c_4 &amp;
+c_3 + c_7 &amp; c_5 &amp; c_6 + c_8 &amp;
+c_9\end{bmatrix}\begin{bmatrix}\omega_1 \\ \omega_2 \\ \omega_3 \\
+\omega_4 \\ \omega_5 \\ \omega_6\end{bmatrix} = 0\)</span></li>
+<li>Here, <span class="math inline">\(\mathbf{C} = \begin{bmatrix} c_1
+&amp; c_2 &amp; c_3 \\ c_4 &amp; c_5 &amp; c_6 \\ c_7 &amp; c_8 &amp;
+c_9 \end{bmatrix}\)</span> is a 3 x 3 matrix created by <span
+class="math inline">\(h_1h_2^T\)</span></li>
+</ul></li>
+<li><p><span class="math inline">\(h_1^T\omega h_1 - h_2^T\omega h_2 =
+0\)</span></p>
+<ul>
+<li>This corresponds to the following equation</li>
+<li><span class="math inline">\(\begin{bmatrix}c_1 &amp; c_2 + c_4 &amp;
+c_3 + c_7 &amp; c_5 &amp; c_6 + c_8 &amp;
+c_9\end{bmatrix}\begin{bmatrix}\omega_1 \\ \omega_2 \\ \omega_3 \\
+\omega_4 \\ \omega_5 \\ \omega_6\end{bmatrix} = 0\)</span></li>
+<li>Here, <span class="math inline">\(\mathbf{C} = \begin{bmatrix} c_1
+&amp; c_2 &amp; c_3 \\ c_4 &amp; c_5 &amp; c_6 \\ c_7 &amp; c_8 &amp;
+c_9 \end{bmatrix}\)</span> is a 3 x 3 matrix created by <span
+class="math inline">\(h_1h_1^T - h_2h_2^T\)</span></li>
+</ul></li>
+</ul></li>
+<li>Construct matrix A of shape <span
+class="math inline">\((6\times6)\)</span> consisting of the 6 equations
+like the ones above - 2 for each square/plane/homography.</li>
+<li>Solve the <span class="math inline">\(A\omega = 0\)</span> using SVD
+under the constraint that <span class="math inline">\(||\omega|| =
+1\)</span></li>
+<li>Construct the matrix <span class="math inline">\(\omega =
+\begin{bmatrix} \omega_1 &amp; 0 &amp; \omega_2 \\ 0 &amp; \omega_1
+&amp; \omega_3 \\ \omega_2 &amp; \omega_3 &amp; \omega_4
+\end{bmatrix}\)</span></li>
+<li>Use Cholesky decomposition <span class="math inline">\(\omega =
+\mathbf{L}\mathbf{L}^T = (\mathbf{K}\mathbf{K}^T)^{-1}\)</span></li>
+<li>Get the intrinsics matrix: <span class="math inline">\(\mathbf{K} =
+(\mathbf{L}^{-1})^T\)</span></li>
+<li>For the angles between planes,
+<ul>
+<li>Compute the unit normals to the plane
+<ul>
+<li>Find vanishing points using the annotations</li>
+<li>Find the direction vectors
+<ul>
+<li><span class="math inline">\(\mathbf{d}_1 =
+\mathbf{K}^{-1}\mathbf{v}_1\)</span></li>
+<li><span class="math inline">\(\mathbf{d}_2 =
+\mathbf{K}^{-1}\mathbf{v}_2\)</span></li>
+</ul></li>
+<li>Calculate normal <span class="math inline">\(\mathbf{n} =
+\mathbf{d}_1 \times \mathbf{d}_2\)</span></li>
+<li>Normalize the normal vector to get a unit vector</li>
+</ul></li>
+<li>Angle is given by <span
+class="math inline">\(\cos^{-1}(\mathbf{n}_i^T\mathbf{n}_j)\)</span></li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><br></p>
+<h1 id="q3-single-view-reconstruction-30-points-10-points-bonus">Q3:
+Single View Reconstruction (30 points + 10 points bonus)</h1>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q3 <span class="at">-c</span> configs/q3.yaml <span class="at">-o</span> output/q3</span></code></pre></div>
+<p><strong>1. Output reconstruction from at least two different views.
+Also include visualizations of annotations that you used.</strong></p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Input</td>
+<td><img src="data/q3/q3.png" width="300"></td>
+</tr>
+<tr class="even">
+<td>Annotations</td>
+<td><img src="output/q3/planes_annotated_q3.png" width="300"></td>
+</tr>
+<tr class="odd">
+<td>Planes</td>
+<td><img src="output/q3/planes_q3.png" width="300"></td>
+</tr>
+<tr class="even">
+<td>Reconstructed View 1</td>
+<td><img src="output/q3/3_view1.png" width="300"></td>
+</tr>
+<tr class="odd">
+<td>Reconstructed View 2</td>
+<td><img src="output/q3/3_view2.png" width="300"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. Brief description of your implementation (i.e., the
+algorithm followed with relevant equations).</strong></p>
+<ul>
+<li>Using the annotations and logic from <strong>question 2a</strong>,
+find <span class="math inline">\(\mathbf{K}\)</span></li>
+<li>Annotate the 5 planes ange generate their normals
+<ul>
+<li>Find vanishing points using the annotations</li>
+<li>Find the direction vectors
+<ul>
+<li><span class="math inline">\(\mathbf{d}_1 =
+\mathbf{K}^{-1}\mathbf{v}_1\)</span></li>
+<li><span class="math inline">\(\mathbf{d}_2 =
+\mathbf{K}^{-1}\mathbf{v}_2\)</span></li>
+</ul></li>
+<li>Calculate normal <span class="math inline">\(\mathbf{n} =
+\mathbf{d}_1 \times \mathbf{d}_2\)</span></li>
+<li>Normalize the normal vector to get a unit vector</li>
+</ul></li>
+<li>Figure out what pixels lie in what plane and which pixels don’t lie
+in any of them
+<ul>
+<li>Create a mask of the original image’s height and width, initialized
+with -1</li>
+<li>For each plane, use the opencv fillpoly function to populate the
+pixels within that polygon with the plane’s index</li>
+<li>Thus, at the end you have a single channel image of size (h, w) with
+values in <span class="math inline">\(\begin{bmatrix}-1 &amp; 0 &amp; 1
+&amp; 2 &amp; 3 &amp; 4\end{bmatrix}\)</span></li>
+</ul></li>
+<li>For each plane,
+<ul>
+<li>We need to find the equation of that plane. The equation of the
+plane is given by <span class="math inline">\(\mathbf{n}^T\mathbf{X} + a
+= 0\)</span>. Here, <span class="math inline">\(\mathbf{n}\)</span> is
+known and <span class="math inline">\(\mathbf{X}\)</span> are the
+variables. So, <span class="math inline">\(a\)</span> needs to be
+determined.
+<ul>
+<li>Annotate an additional point, <span
+class="math inline">\(\mathbf{x}\)</span> within that plane</li>
+<li>Get the corresponding backprojection ray using <span
+class="math inline">\(\mathbf{X} = \lambda\mathbf{P}^+\mathbf{x} =
+\lambda\mathbf{K}^{-1}\mathbf{x}\)</span>. Here, the assumption is that
+we will always be in the camera coordinate frame. So, the camera center
+lies at the origin.</li>
+<li>Now, to figure out lambda, we manually decide a depth for this
+chosen point.</li>
+<li><span class="math inline">\(\therefore \lambda =
+\frac{\mathbf{depth}}{\sqrt{x^2 + y^2 + z^2}}\)</span></li>
+<li>Now, get <span class="math inline">\(a = - \lambda *
+\mathbf{n}^T\mathbf{X}\)</span></li>
+</ul></li>
+<li>Once the equation of the plane is known, we need the actual 3D
+coordinates for each of the pixels lying in that plane. This will be
+done by finding the point of intersection of the backprojected ray and
+the plane
+<ul>
+<li>Get the corresponding backprojection ray using <span
+class="math inline">\(\mathbf{X} = \lambda\mathbf{K}^{-1}\mathbf{x} =
+\lambda \begin{bmatrix}X_1 \\ X_2 \\ X_3\end{bmatrix}\)</span></li>
+<li>Substitute these in the plane equation, <span
+class="math inline">\(\mathbf{n}^T\mathbf{X} + a = 0\)</span>, and get
+the <span class="math inline">\(\lambda\)</span> by <span
+class="math inline">\(\lambda = \frac{-a}{\mathbf{n}^T\begin{bmatrix}X_1
+\\ X_2 \\ X_3\end{bmatrix}}\)</span></li>
+<li>Now, get the 3D point <span class="math inline">\(\mathbf{X} =
+\lambda \begin{bmatrix}X_1 \\ X_2 \\ X_3\end{bmatrix}\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+</body>
+</html>

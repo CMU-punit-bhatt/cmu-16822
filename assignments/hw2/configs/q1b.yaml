@@ -1,0 +1,5 @@
+IMG: 'data/q1/cube.jpg'
+
+CORRESPONDENCES: 'data/q1/cube.txt'
+
+EDGES: 'data/q1/cube_edges.npy'

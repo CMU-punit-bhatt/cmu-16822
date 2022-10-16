@@ -1,0 +1,40 @@
+02:56:35,104 root INFO Intrinsics matrix for data/q3/q3.png:
+[[830.15940998   0.         507.67502387]
+ [  0.         830.15940998 367.66963049]
+ [  0.           0.           1.        ]]
+
+02:58:27,864 root INFO Intrinsics matrix for data/q3/q3.png:
+[[830.15940998   0.         507.67502387]
+ [  0.         830.15940998 367.66963049]
+ [  0.           0.           1.        ]]
+
+15:50:35,381 root INFO Plane normal - [-0.67015476 -0.16399282  0.72387772]
+15:50:35,381 root INFO Known point lambda - 91.3096028283459
+15:50:35,395 root INFO Plane normal - [-0.75934969  0.1105968  -0.64121478]
+15:50:35,395 root INFO Known point lambda - 90.65535715303399
+15:50:35,405 root INFO Plane normal - [-0.00976945 -0.97205441 -0.23455231]
+15:50:35,405 root INFO Known point lambda - 66.69387436743102
+15:50:35,425 root INFO Plane normal - [0.52844064 0.55400844 0.64329242]
+15:50:35,425 root INFO Known point lambda - 107.52482330189397
+15:50:35,431 root INFO Plane normal - [ 0.40721998 -0.68046715 -0.60920961]
+15:50:35,431 root INFO Known point lambda - 108.32150589624143
+16:03:30,598 matplotlib.figure INFO input 1: 144.661290, 342.467742
+16:03:32,866 matplotlib.figure INFO input 1: 890.629032, 378.758065
+16:03:33,991 matplotlib.figure INFO input 1: 485.387097, 628.758065
+16:03:34,958 matplotlib.figure INFO input 1: 902.725806, 203.354839
+16:03:35,925 matplotlib.figure INFO input 1: 166.838710, 177.145161
+16:03:36,221 root INFO Intrinsics matrix for data/q3/q3.png: 
+[[830.15940998   0.         507.67502387]
+ [  0.         830.15940998 367.66963049]
+ [  0.           0.           1.        ]]
+
+16:03:38,620 root INFO Plane normal - [-0.67015476 -0.16399282  0.72387772]
+16:03:38,620 root INFO Known point lambda - 91.55954698355467
+16:03:38,632 root INFO Plane normal - [-0.75934969  0.1105968  -0.64121478]
+16:03:38,633 root INFO Known point lambda - 90.82447327243906
+16:03:38,641 root INFO Plane normal - [-0.00976945 -0.97205441 -0.23455231]
+16:03:38,641 root INFO Known point lambda - 66.77014944829358
+16:03:38,656 root INFO Plane normal - [0.52844064 0.55400844 0.64329242]
+16:03:38,656 root INFO Known point lambda - 106.69425958560021
+16:03:38,663 root INFO Plane normal - [ 0.40721998 -0.68046715 -0.60920961]
+16:03:38,663 root INFO Known point lambda - 108.5473682535501
