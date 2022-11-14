@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="index.css">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>solution</title>
+  <!-- <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style> -->
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="hw3-3d-reconstruction">HW3: 3D reconstruction</h1>
+<h2 id="number-of-late-days-3">Number of late days: 3</h2>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#q1-8-point-and-7-point-algorithm-40-points"
+id="toc-q1-8-point-and-7-point-algorithm-40-points">Q1: 8-point and
+7-point algorithm (40 points)</a>
+<ul>
+<li><a href="#a1-f-matrix-using-8-point-algorithm-15-points"
+id="toc-a1-f-matrix-using-8-point-algorithm-15-points">(A1) F matrix
+using 8-point algorithm (15 points)</a></li>
+<li><a href="#a2-e-matrix-using-8-point-algorithm-5-points"
+id="toc-a2-e-matrix-using-8-point-algorithm-5-points">(A2) E matrix
+using 8-point algorithm (5 points)</a></li>
+<li><a href="#b-7-point-algorithm-20-points"
+id="toc-b-7-point-algorithm-20-points">(B) 7-point algorithm (20
+points)</a></li>
+</ul></li>
+<li><a href="#q2-ransac-with-7-point-and-8-point-algorithm-30-points"
+id="toc-q2-ransac-with-7-point-and-8-point-algorithm-30-points">Q2:
+RANSAC with 7-point and 8-point algorithm (30 points)</a></li>
+<li><a href="#q3-triangulation-30-points"
+id="toc-q3-triangulation-30-points">Q3: Triangulation (30
+points)</a></li>
+<li><a href="#q4-bonus-1---bundle-adjustment-10-points"
+id="toc-q4-bonus-1---bundle-adjustment-10-points">Q4: Bonus 1 - Bundle
+Adjustment (10 points)</a></li>
+<li><a
+href="#q5-bonus-2---fundamental-matrix-estimation-on-your-own-images.-10-points"
+id="toc-q5-bonus-2---fundamental-matrix-estimation-on-your-own-images.-10-points">Q5:
+Bonus 2 - Fundamental matrix estimation on your own images. (10
+points)</a></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="q1-8-point-and-7-point-algorithm-40-points">Q1: 8-point and
+7-point algorithm (40 points)</h2>
+<h3 id="a1-f-matrix-using-8-point-algorithm-15-points">(A1) F matrix
+using 8-point algorithm (15 points)</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chair</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q1a <span class="at">-c</span> configs/q1a_chair.yaml <span class="at">-o</span> output/q1a</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teddy</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q1a <span class="at">-c</span> configs/q1a_teddy.yaml <span class="at">-o</span> output/q1a</span></code></pre></div>
+<ol type="1">
+<li><strong>Brief explanation of your implementation.</strong></li>
+</ol>
+<p>Algorithm:</p>
+<ul>
+<li>Read the <span class="math inline">\(\mathbf{N}\)</span> pairs of
+point correspondences.</li>
+<li>Normalize <span class="math inline">\(p_1\)</span> and <span
+class="math inline">\(p_2\)</span> per correspondence as follows
+<ul>
+<li><span class="math inline">\(p_1^{&#39;} = \mathbf{T}_1p_1\)</span>
+and <span class="math inline">\(p_2^{&#39;} =
+\mathbf{T}_2p_2\)</span></li>
+<li>Here <span class="math inline">\(\mathbf{T}_i = \begin{bmatrix}s_i
+&amp; 0 &amp; - s_i x_{io} \\ 0 &amp; s_i &amp; - s_i y_{io} \\ 0 &amp;
+0 &amp; 1 \end{bmatrix}\)</span>
+<ul>
+<li><span class="math inline">\((x_{io}, y_{io}) = \frac{1}{\mathbf{N}}
+\sum{p_i}\)</span></li>
+<li><span class="math inline">\(s_i = \frac{\sqrt{2}}{d_{avg}}\)</span>
+<ul>
+<li><span class="math inline">\(d_{avg} = \frac{1}{\mathbf{N}}
+\sum{\sqrt{(x_i - x_{io})^2 + (y_i - y_{io})^2}}\)</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Construct a <span class="math inline">\((\mathbf{N}, 9)\)</span>
+matrix <span class="math inline">\(\mathbf{A}\)</span> as follows
+<ul>
+<li>For each point correspondence <span class="math inline">\((p_1,
+p_2)\)</span> where, say <span class="math inline">\(p_1 =
+\begin{bmatrix}u \\ v \\ w\end{bmatrix}\)</span> and <span
+class="math inline">\(p_2 = \begin{bmatrix}u^{&#39;} \\ v^{&#39;} \\
+w^{&#39;}\end{bmatrix}\)</span></li>
+<li><span class="math inline">\(\therefore \mathbf{A}_i =\begin{bmatrix}
+u^{&#39;}u &amp; u^{&#39;}v &amp; u^{&#39;}w &amp; v^{&#39;}u &amp;
+v^{&#39;}v &amp; v^{&#39;}w &amp; w^{&#39;}u &amp; w^{&#39;}v &amp;
+w^{&#39;}w\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Construct <span class="math inline">\(\mathbf{F}^{&#39;}\)</span>
+and project it to rank 2
+<ul>
+<li>Solve <span class="math inline">\(\mathbf{A}f = 0\)</span> using SVD
+and get the 9 variable vector <span
+class="math inline">\(f\)</span></li>
+<li>Reshape to a <span class="math inline">\((3, 3)\)</span> matrix say
+<span class="math inline">\(\mathbf{F}^{&#39;}\)</span></li>
+<li>Perform SVD on this matrix and set the last singular value to 0 to
+project it to a rank 2 matrix.</li>
+</ul></li>
+<li>Transform the fundamental matrix back to pixel space
+<ul>
+<li>Final fundamental matrix, <span class="math inline">\(\mathbf{F} =
+\mathbf{T}_2^T \mathbf{F}^{&#39;} \mathbf{T}_1\)</span></li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Epipolar lines: Show lines from fundamental matrix over the
+two images.</strong></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>F-matrix visualizations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chair</td>
+<td><img src="output/q1a/chair.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Teddy</td>
+<td><img src="output/q1a/teddy.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fundamental Matrices</strong></p>
+<ul>
+<li>Chair
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}1.25682882e-07 &amp;
+2.04037806e-06 &amp; -8.18156509e-04 \\ -3.02922310e-06 &amp;
+2.93471707e-07 &amp; 1.75381350e-02 \\ -3.68946946e-05 &amp;
+-1.78325516e-02 &amp; 1.00000000e+00 \end{bmatrix}\)</span></li>
+</ul></li>
+<li>Teddy
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 1.27285869e-07 &amp;
+-4.57717590e-08 &amp; 6.67579893e-04 \\  -4.96411752e-07 &amp;
+-3.13172764e-07 &amp; -3.96609523e-03 \\  -1.85248054e-03 &amp;
+4.53297156e-03 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+</ul>
+<h3 id="a2-e-matrix-using-8-point-algorithm-5-points">(A2) E matrix
+using 8-point algorithm (5 points)</h3>
+<ol type="1">
+<li><strong>Brief explanation of your implementation.</strong></li>
+</ol>
+<p>Algorithm</p>
+<ul>
+<li>Given the fundamental matrix <span
+class="math inline">\(\mathbf{F}\)</span> and intrinsic matrices <span
+class="math inline">\(\mathbf{K}_1\)</span>, <span
+class="math inline">\(\mathbf{K}_2\)</span>, essential matrix can be
+calculated as follows
+<ul>
+<li><span class="math inline">\(\mathbf{E} = \mathbf{K}_2^T \mathbf{F}
+\mathbf{K}_1\)</span></li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Provide your estimated <code>E</code>.</strong></li>
+</ol>
+<ul>
+<li>Chair
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 0.1132005 &amp;
+1.83773494 &amp; 1.09414997 \\  -2.72837139 &amp; 0.26432514 &amp;
+16.02673254 \\  -2.72725295 &amp; -16.09946269 &amp; 0.44957711
+\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Teddy
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 0.13499427 &amp;
+-0.04854369 &amp; 0.79742868 \\  -0.52647433 &amp; -0.33213843 &amp;
+-4.66435097 \\  -1.93860455 &amp; 4.53037473 &amp;
+-0.02513974\end{bmatrix}\)</span></li>
+</ul></li>
+</ul>
+<h3 id="b-7-point-algorithm-20-points">(B) 7-point algorithm (20
+points)</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toybus</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q1b <span class="at">-c</span> configs/q1b_toybus.yaml <span class="at">-o</span> output/q1b</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Toytrain</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q1b <span class="at">-c</span> configs/q1b_toytrain.yaml <span class="at">-o</span> output/q1b</span></code></pre></div>
+<ol type="1">
+<li><strong>Brief explanation of your implementation.</strong></li>
+</ol>
+<p>Algorithm:</p>
+<ul>
+<li>Read the 7 pairs of point correspondences.</li>
+<li>Normalize <span class="math inline">\(p_1\)</span> and <span
+class="math inline">\(p_2\)</span> per correspondence as follows
+<ul>
+<li><span class="math inline">\(p_1^{&#39;} = \mathbf{T}_1p_1\)</span>
+and <span class="math inline">\(p_2^{&#39;} =
+\mathbf{T}_2p_2\)</span></li>
+<li>Here <span class="math inline">\(\mathbf{T}_i = \begin{bmatrix}s_i
+&amp; 0 &amp; - s_i x_{io} \\ 0 &amp; s_i &amp; - s_i y_{io} \\ 0 &amp;
+0 &amp; 1 \end{bmatrix}\)</span>
+<ul>
+<li><span class="math inline">\((x_{io}, y_{io}) = \frac{1}{\mathbf{N}}
+\sum{p_i}\)</span></li>
+<li><span class="math inline">\(s_i = \frac{\sqrt{2}}{d_{avg}}\)</span>
+<ul>
+<li><span class="math inline">\(d_{avg} = \frac{1}{\mathbf{N}}
+\sum{\sqrt{(x_i - x_{io})^2 + (y_i - y_{io})^2}}\)</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Construct a <span class="math inline">\((7, 9)\)</span> matrix <span
+class="math inline">\(\mathbf{A}\)</span> as follows
+<ul>
+<li>For each point correspondence <span class="math inline">\((p_1,
+p_2)\)</span> where, say <span class="math inline">\(p_1 =
+\begin{bmatrix}u \\ v \\ w\end{bmatrix}\)</span> and <span
+class="math inline">\(p_2 = \begin{bmatrix}u^{&#39;} \\ v^{&#39;} \\
+w^{&#39;}\end{bmatrix}\)</span></li>
+<li><span class="math inline">\(\therefore \mathbf{A}_i =\begin{bmatrix}
+u^{&#39;}u &amp; u^{&#39;}v &amp; u^{&#39;}w &amp; v^{&#39;}u &amp;
+v^{&#39;}v &amp; v^{&#39;}w &amp; w^{&#39;}u &amp; w^{&#39;}v &amp;
+w^{&#39;}w\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Solve <span class="math inline">\(\mathbf{A}f = 0\)</span> using SVD
+and take the vectors corresponding to the last 2 singular values.</li>
+<li>The family of fundamental matrices is given by the <span
+class="math inline">\(\lambda\)</span>s that solve <span
+class="math inline">\(det(\lambda\mathbf{F}_1 + (1 -
+\lambda)\mathbf{F}_2)=0\)</span>
+<ul>
+<li>On solving the above cubic polynomial, there is a possibility of
+getting more than 1 real root.</li>
+<li>For each valid <span class="math inline">\(\mathbf{F}\)</span>, the
+overall error is calculated as the distance of correspondence points
+from the epipolar lines.</li>
+<li>The one with the minimum error is considered the best solution.</li>
+</ul></li>
+<li>Transform the fundamental matrix back to pixel space
+<ul>
+<li>Final fundamental matrix, <span class="math inline">\(\mathbf{F} =
+\mathbf{T}_2^T \mathbf{F}^{&#39;} \mathbf{T}_1\)</span></li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Epipolar lines: Similar to the above, you need to show lines
+from fundamental matrix over the two images.</strong></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>F-matrix visualizations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Toybus</td>
+<td><img src="output/q1b/toybus.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Toytrain</td>
+<td><img src="output/q1b/toytrain.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fundamental Matrices</strong></p>
+<ul>
+<li>Toybus
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} 2.46880962e-08 &amp;
+-5.95982379e-07 &amp; 9.63187948e-04 \\  8.83680434e-08 &amp;
+1.69806057e-06 &amp; -3.31485469e-03 \\  -1.15390742e-03 &amp;
+1.78368743e-03 &amp; 1.00000000e+00 \end{bmatrix}\)</span></li>
+</ul></li>
+<li>Teddy
+<ul>
+<li><span class="math inline">\(\begin{bmatrix} -1.30447307e-07 &amp;
+3.15712899e-06 &amp; -1.72784408e-03 \\  -9.36703950e-07 &amp;
+7.99558408e-07 &amp; -2.72350527e-03 \\  5.39072809e-04 &amp;
+8.21295355e-04 &amp; 1.00000000e+00 \\\end{bmatrix}\)</span></li>
+</ul></li>
+</ul>
+<h2 id="q2-ransac-with-7-point-and-8-point-algorithm-30-points">Q2:
+RANSAC with 7-point and 8-point algorithm (30 points)</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 8 point algorithm with Chair and Teddy.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q2 <span class="at">-c</span> configs/q2_8point.yaml <span class="at">-o</span> output/q2</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 7 point algorithm with Toybus and Toytrain.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q2 <span class="at">-c</span> configs/q2_7point.yaml <span class="at">-o</span> output/q2</span></code></pre></div>
+<ol type="1">
+<li><strong>Brief explanation of your RANSAC implementation and criteria
+for considering inliers.</strong></li>
+</ol>
+<p>Algorithm</p>
+<ul>
+<li>Choose the number of iterations to run</li>
+<li>For each iteration,
+<ul>
+<li>Choose the required number of correspondences randomly from the
+total correspondences</li>
+<li>Compute <span class="math inline">\(\mathbf{F}\)</span> candidate
+using 8-point or 7-point algorithm described in the answers to the
+previous questions.</li>
+<li>Compute the error per correspondence
+<ul>
+<li>Consider a correspondence pair <span class="math inline">\((p_1,
+p_2)\)</span></li>
+<li>Compute the corresponding epipolar lines as follows
+<ul>
+<li><span class="math inline">\(l_1 = \mathbf{F}_i p_1\)</span> and
+<span class="math inline">\(l_2 = \mathbf{F}_i^T p_2\)</span></li>
+</ul></li>
+<li>The total error is calculated as the sum of distance between <span
+class="math inline">\(p_2\)</span> and <span
+class="math inline">\(l_1\)</span>, and that between <span
+class="math inline">\(p_1\)</span> and <span
+class="math inline">\(l_2\)</span></li>
+</ul></li>
+<li>Find the total number of inliers based on a chosen error
+threshold.</li>
+<li>Keep track of the best F candidate and inliers.</li>
+</ul></li>
+<li>Compute the final <span class="math inline">\(\mathbf{F}\)</span>
+based on the inliers</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Report your best solution and plot the epipolar lines – show
+lines from fundamental matrix that you calculate over the
+inliers.</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 25%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Algorithm</th>
+<th>F-matrix visualizations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chair</td>
+<td>8-Point</td>
+<td><img src="output/q2/eightpoint_chair.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Teddy</td>
+<td>8-Point</td>
+<td><img src="output/q2/eightpoint_teddy.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Toybus</td>
+<td>8-Point</td>
+<td><img src="output/q2/eightpoint_toybus.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Toytrain</td>
+<td>8-Point</td>
+<td><img src="output/q2/eightpoint_toytrain.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Chair</td>
+<td>7-Point</td>
+<td><img src="output/q2/sevenpoint_chair.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Teddy</td>
+<td>7-Point</td>
+<td><img src="output/q2/sevenpoint_teddy.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Toybus</td>
+<td>7-Point</td>
+<td><img src="output/q2/sevenpoint_toybus.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Toytrain</td>
+<td>7-Point</td>
+<td><img src="output/q2/sevenpoint_toytrain.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fundamental Matrices</strong></p>
+<ul>
+<li>8 Point
+<ul>
+<li>Chair
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}-7.18894578e-08 &amp;
+5.38304501e-07 &amp; -2.89960408e-05 \\  -1.30801839e-06 &amp;
+-3.09578196e-07 &amp; -5.28689590e-03 \\  -5.31852221e-04 &amp;
+6.56088403e-03 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Teddy
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}-7.04045827e-06 &amp;
+8.66325989e-07 &amp; -1.54530794e-02 \\  -1.24179808e-05 &amp;
+4.88189017e-06 &amp; -3.09669649e-02 \\  1.97416840e-02 &amp;
+3.58302003e-02 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Toybus
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}4.42412336e-08 &amp;
+4.81385960e-09 &amp; 3.26114945e-04] \\  -6.83630808e-07 &amp;
+1.56293249e-07 &amp; -4.71728030e-03 \\  -8.73510794e-04 &amp;
+5.23478941e-03 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Toytrain
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}-4.46442899e-06 &amp;
+1.39130166e-06 &amp; -1.03695611e-02 \\  -8.36163905e-06 &amp;
+3.37742993e-06 &amp; -2.02417847e-02 \\  1.26250020e-02 &amp;
+2.27129959e-02 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+</ul></li>
+<li>7 Point
+<ul>
+<li>Chair
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}3.10971723e-07 &amp;
+3.63738648e-06 &amp; -2.67069158e-03 \\  -4.03495739e-06 &amp;
+4.84944768e-07 &amp; 8.91309547e-03 \\  1.91022692e-03 &amp;
+-9.89852078e-03 &amp; 1.00000000e+00 \end{bmatrix}\)</span></li>
+</ul></li>
+<li>Teddy
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}-8.18796582e-08 &amp;
+8.88807026e-07 &amp; 6.23447152e-04 \\  -1.58024871e-06 &amp;
+-8.33102864e-07 &amp; -4.19379447e-03 \\  -1.81007835e-03 &amp;
+5.47921813e-03 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Toybus
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}2.97305851e-07 &amp;
+2.42976071e-06 &amp; -3.57687609e-03 \\  -2.62309020e-06 &amp;
+2.91719146e-07 &amp; 5.34487578e-03 \\  2.97640681e-03 &amp;
+-6.18726042e-03 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Toytrain
+<ul>
+<li><span class="math inline">\(\begin{bmatrix}-3.09767573e-10 &amp;
+4.88982010e-07 &amp; 6.16673448e-04 \\  -1.10213040e-06 &amp;
+-6.20750307e-07 &amp; -4.09325410e-03 \\  -1.80081057e-03 &amp;
+5.07272936e-03 &amp; 1.00000000e+00\end{bmatrix}\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Visualization (graph plot) of % of inliers vs. # of RANSAC
+iterations (see the example below). You should report such plots for
+both, the 7-pt and 8-pt Algorithms in the inner loop of
+RANSAC.</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 25%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Algorithm</th>
+<th>% of inliers vs. # of RANSAC iterations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chair</td>
+<td>8-Point</td>
+<td><img src="output/q2/iters_eightpoint_chair.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Teddy</td>
+<td>8-Point</td>
+<td><img src="output/q2/iters_eightpoint_teddy.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Toybus</td>
+<td>8-Point</td>
+<td><img src="output/q2/iters_eightpoint_toybus.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Toytrain</td>
+<td>8-Point</td>
+<td><img src="output/q2/iters_eightpoint_toytrain.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Chair</td>
+<td>7-Point</td>
+<td><img src="output/q2/iters_sevenpoint_chair.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Teddy</td>
+<td>7-Point</td>
+<td><img src="output/q2/iters_sevenpoint_teddy.png" width="800"></td>
+</tr>
+<tr class="odd">
+<td>Toybus</td>
+<td>7-Point</td>
+<td><img src="output/q2/iters_sevenpoint_toybus.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Toytrain</td>
+<td>7-Point</td>
+<td><img src="output/q2/iters_sevenpoint_toytrain.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="q3-triangulation-30-points">Q3: Triangulation (30 points)</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q3 <span class="at">-c</span> configs/q3.yaml <span class="at">-o</span> output/q3</span></code></pre></div>
+<ol type="1">
+<li><strong>Brief explanation of your implementation.</strong></li>
+</ol>
+<p>Algorithm</p>
+<ul>
+<li>Given <span class="math inline">\(\mathbf{P}_1\)</span>, <span
+class="math inline">\(\mathbf{P}_2\)</span> and <span
+class="math inline">\((p_1, p_2)\)</span> pairs, for each pair of
+correspondences
+<ul>
+<li>Construct a <span class="math inline">\((6, 4)\)</span> matrix <span
+class="math inline">\(\mathbf{A}\)</span> as follows
+<ul>
+<li><span class="math inline">\(\mathbf{A} = \begin{bmatrix}
+[p_1]_{\mathbf{x}}\mathbf{P}_1 \\ [p_2]_{\mathbf{x}}\mathbf{P}_2
+\end{bmatrix}\)</span></li>
+</ul></li>
+<li>Solve <span class="math inline">\(\mathbf{Ax}=0\)</span> using
+SVD</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Results</strong></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Correspondences</td>
+<td><img src="output/q3/corresp_triangulation.png" width="800"></td>
+</tr>
+<tr class="even">
+<td>Point Cloud</td>
+<td><img src="output/q3/q3.png" width="800"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="q4-bonus-1---bundle-adjustment-10-points">Q4: Bonus 1 - Bundle
+Adjustment (10 points)</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q4 <span class="at">-c</span> configs/q4.yaml <span class="at">-o</span> output/q4</span></code></pre></div>
+<ol type="1">
+<li><strong>Brief explanation of your implementation.</strong></li>
+</ol>
+<p>Algorithm:</p>
+<ul>
+<li>More accurate projection matrices are found by optimizing the
+reprojection errors of the 3D points back onto the image planes.</li>
+<li>Per every optimization iteration,
+<ul>
+<li>The current projection matrices and correspondences pairs are used
+to triangulate the 3D points in space using the algorithm described in
+q3.</li>
+<li>These points are then reprojected back onto the image plane and the
+reprojection residual are computed.</li>
+</ul></li>
+<li>Using library functions such as scipy.optimize.least_squares, the
+above optimization problem is solved to get the better projection
+matrices.</li>
+</ul>
+<ol start="2" type="1">
+<li><p><strong>A colored point cloud before and after bundle
+adjustment:</strong></p>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>2D Correspondences</th>
+<th>Before Bundle Adjustment</th>
+<th>After Bundle Adjustment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="output/q4/corresp_bundle_adjustment.png" width="800"></td>
+<td><img src="output/q4/q4_before1.png" width="800"></td>
+<td><img src="output/q4/q4_after1.png" width="800"></td>
+</tr>
+<tr class="even">
+<td><img src="output/q4/corresp_bundle_adjustment.png" width="800"></td>
+<td><img src="output/q4/q4_before2.png" width="800"></td>
+<td><img src="output/q4/q4_after2.png" width="800"></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<h2
+id="q5-bonus-2---fundamental-matrix-estimation-on-your-own-images.-10-points">Q5:
+Bonus 2 - Fundamental matrix estimation on your own images. (10
+points)</h2>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> main.py <span class="at">-q</span> q5 <span class="at">-c</span> configs/q5.yaml <span class="at">-o</span> output/q5</span></code></pre></div>
+<ol type="1">
+<li><strong>Brief explanation of your implementation.</strong></li>
+</ol>
+<p>Algorithm:</p>
+<ul>
+<li>Generated correspondences
+<ul>
+<li>Using SIFT feature descriptors, found the closest match in the other
+image and collected them as correspondences.</li>
+</ul></li>
+<li>Running the same algorithm as q1a on custom images.</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Epipolar lines.</strong></li>
+</ol>
+<p><img src="output/q5/custom_eightpoint.png" width="800"></p>
+</body>
+</html>
+

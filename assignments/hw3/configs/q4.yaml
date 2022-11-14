@@ -1,0 +1,13 @@
+NAME: 'bundle_adjustment'
+
+IMGS:
+- 'data/q4/img1.jpg'
+- 'data/q4/img2.jpg'
+
+PROJECTIONS:
+- 'data/q4/P1_noisy.npy'
+- 'data/q4/P2_noisy.npy'
+
+CORRESPONDENCES:
+- 'data/q4/pts1.npy'
+- 'data/q4/pts2.npy'

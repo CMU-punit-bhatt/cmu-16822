@@ -1,0 +1,16 @@
+NAME: 'toytrain'
+
+IMGS:
+- 'data/q1b/toytrain/image_1.jpg'
+- 'data/q1b/toytrain/image_2.jpg'
+
+CORRESPONDENCES: 'data/q1b/toytrain/toytrain_7_point_corresp.npz'
+CORRESPONDENCES_RAW: 'data/q1b/toytrain/toytrain_corresp_raw.npz'
+
+INTRINSICS: 'data/q1b/toytrain/intrinsic_matrices_toytrain.npz'
+
+N_ANNOTATION_POINTS: 2
+
+COLORS:
+- [255, 0, 0]
+- [0, 255, 0]

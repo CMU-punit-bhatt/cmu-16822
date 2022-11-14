@@ -1,0 +1,13 @@
+NAME: 'triangulation'
+
+IMGS:
+- 'data/q3/img1.jpg'
+- 'data/q3/img2.jpg'
+
+PROJECTIONS:
+- 'data/q3/P1.npy'
+- 'data/q3/P2.npy'
+
+CORRESPONDENCES:
+- 'data/q3/pts1.npy'
+- 'data/q3/pts2.npy'

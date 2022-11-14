@@ -1,0 +1,11 @@
+NAME: 'eightpoint'
+
+ALG_TYPE: 'eight'
+
+CONFIGS:
+# - 'configs/q1a_chair.yaml'
+# - 'configs/q1a_teddy.yaml'
+- 'configs/q1b_toybus.yaml'
+- 'configs/q1b_toytrain.yaml'
+
+THRESH: 3.5

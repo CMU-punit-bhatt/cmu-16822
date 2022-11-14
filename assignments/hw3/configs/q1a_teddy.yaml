@@ -1,0 +1,16 @@
+NAME: 'teddy'
+
+IMGS:
+- 'data/q1a/teddy/image_1.jpg'
+- 'data/q1a/teddy/image_2.jpg'
+
+CORRESPONDENCES: 'data/q1a/teddy/teddy_corresp_raw.npz'
+CORRESPONDENCES_RAW: 'data/q1a/teddy/teddy_corresp_raw.npz'
+
+INTRINSICS: 'data/q1a/teddy/intrinsic_matrices_teddy.npz'
+
+N_ANNOTATION_POINTS: 2
+
+COLORS:
+- [255, 0, 0]
+- [0, 255, 0]

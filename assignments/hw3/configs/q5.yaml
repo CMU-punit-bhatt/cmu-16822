@@ -1,0 +1,9 @@
+NAME: 'custom_eightpoint'
+
+ALG_TYPE: 'eight'
+
+IMGS:
+- 'data/q5/img3.jpeg'
+- 'data/q5/img4.jpeg'
+
+THRESH: 10.0
