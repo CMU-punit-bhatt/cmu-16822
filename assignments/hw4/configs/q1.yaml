@@ -1,0 +1,9 @@
+NAME: 'monument'
+
+IMGS:
+- 'data/monument/im1.jpg'
+- 'data/monument/im2.jpg'
+
+CORRESPONDENCES: 'data/monument/some_corresp_noisy.npz'
+
+INTRINSICS: 'data/monument/intrinsics.npy'

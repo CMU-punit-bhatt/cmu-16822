@@ -1,0 +1,54 @@
+NAME: 'cow'
+
+CORRESPONDENCES:
+# First 2 cameras
+- KEY1: 'CAM1'
+  KEY2: 'CAM2'
+  IMG1: 'data/data_cow/images/00001.jpg'
+  IMG2: 'data/data_cow/images/00002.jpg'
+  CAM1: 'data/data_cow/cameras/cam1.npz'
+  CAM2: 'data/data_cow/cameras/cam2.npz'
+  POINTS1: 'data/data_cow/correspondences/pairs_1_2/cam1_corresp.npy'
+  POINTS2: 'data/data_cow/correspondences/pairs_1_2/cam2_corresp.npy'
+# Adding camera 3
+- KEY1: 'CAM1'
+  KEY2: 'CAM3'
+  IMG1: 'data/data_cow/images/00001.jpg'
+  IMG2: 'data/data_cow/images/00003.jpg'
+  CAM1: 'data/data_cow/cameras/cam1.npz'
+  CAM2: null
+  POINTS1: 'data/data_cow/correspondences/pairs_1_3/cam1_corresp.npy'
+  POINTS2: 'data/data_cow/correspondences/pairs_1_3/cam2_corresp.npy'
+- KEY1: 'CAM2'
+  KEY2: 'CAM3'
+  IMG1: 'data/data_cow/images/00002.jpg'
+  IMG2: 'data/data_cow/images/00003.jpg'
+  CAM1: 'data/data_cow/cameras/cam2.npz'
+  CAM2: null
+  POINTS1: 'data/data_cow/correspondences/pairs_2_3/cam1_corresp.npy'
+  POINTS2: 'data/data_cow/correspondences/pairs_2_3/cam2_corresp.npy'
+# Adding camera 4
+- KEY1: 'CAM1'
+  KEY2: 'CAM4'
+  IMG1: 'data/data_cow/images/00001.jpg'
+  IMG2: 'data/data_cow/images/00004.jpg'
+  CAM1: 'data/data_cow/cameras/cam1.npz'
+  CAM2: null
+  POINTS1: 'data/data_cow/correspondences/pairs_1_4/cam1_corresp.npy'
+  POINTS2: 'data/data_cow/correspondences/pairs_1_4/cam2_corresp.npy'
+- KEY1: 'CAM2'
+  KEY2: 'CAM4'
+  IMG1: 'data/data_cow/images/00002.jpg'
+  IMG2: 'data/data_cow/images/00004.jpg'
+  CAM1: 'data/data_cow/cameras/cam2.npz'
+  CAM2: null
+  POINTS1: 'data/data_cow/correspondences/pairs_2_4/cam1_corresp.npy'
+  POINTS2: 'data/data_cow/correspondences/pairs_2_4/cam2_corresp.npy'
+- KEY1: 'CAM3'
+  KEY2: 'CAM4'
+  IMG1: 'data/data_cow/images/00003.jpg'
+  IMG2: 'data/data_cow/images/00004.jpg'
+  CAM1: null
+  CAM2: null
+  POINTS1: 'data/data_cow/correspondences/pairs_3_4/cam1_corresp.npy'
+  POINTS2: 'data/data_cow/correspondences/pairs_3_4/cam2_corresp.npy'
